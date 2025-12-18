@@ -1,48 +1,90 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const SCREENSHOTS = [
+    "/images/uploaded_image_0_1765819164973.png",
+    "/images/uploaded_image_5_1766074384626.png",
+    "/images/uploaded_image_6_1766074384626.png",
+    "/images/uploaded_image_7_1766074384626.png",
+    "/images/uploaded_image_1_1765819164973.png",
+    "/images/uploaded_image_2_1765819164973.png",
+    "/images/uploaded_image_3_1765819164973.png",
+    "/images/uploaded_image_4_1765819164973.png"
+];
 
 export function Results() {
-    const results = [1, 2, 3];
+    // Triple the array to create an infinite loop illusion for the marquee
+    const infiniteScroll = [...SCREENSHOTS, ...SCREENSHOTS, ...SCREENSHOTS];
 
     return (
-        <section id="results" className="py-24 bg-slate-50 overflow-hidden">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <section id="results" className="py-24 bg-slate-50 overflow-hidden relative">
+            <div className="container mx-auto px-6 mb-16">
+                <div className="flex flex-col md:flex-row justify-between items-end gap-8">
                     <div className="max-w-xl">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Real Client Results</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Client Results</h2>
                         <p className="text-slate-600 text-lg">
-                            These screenshots represent real MT5 accounts running the same automation engine.
-                            Past performance does not guarantee future results.
+                            Real client results using the automated trading system
                         </p>
                     </div>
-                    <button className="px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-colors">
-                        View Verified MyFXBook
-                    </button>
+                    <a href="#fees" className="px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-colors">
+                        Fees & transparency
+                    </a>
                 </div>
+            </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
-                    {results.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.2 }}
-                            viewport={{ once: true }}
-                            className="aspect-[3/4] rounded-2xl bg-white border border-slate-200 relative group overflow-hidden shadow-xl shadow-slate-200/50"
-                        >
-                            {/* Placeholder Content for Results */}
-                            <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-medium">
-                                Review Screenshot {item}
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent opacity-60" />
-                            <div className="absolute bottom-6 left-6 right-6">
-                                <div className="h-2 w-full bg-slate-200 rounded-full mb-3" />
-                                <div className="h-2 w-2/3 bg-slate-200 rounded-full" />
-                            </div>
-                        </motion.div>
+            {/* Infinite Marquee Slider */}
+            <div className="relative w-full overflow-hidden py-10">
+                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10" />
+                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10" />
+
+                <motion.div
+                    className="flex gap-8 px-8"
+                    animate={{ x: ["0%", "-33.33%"] }} // Move by one-third (one original set length)
+                    transition={{
+                        duration: 20,
+                        ease: "linear",
+                        repeat: Infinity
+                    }}
+                    whileHover={{ animationPlayState: 'paused' }} // CSS pause ref is harder with purely motion, we can use hover to slow down or pause logic if needed, but framer motion simple loop usually doesn't pause easily on hover without complex state. 
+                // Alternative: Simple CSS animation for the marquee if we want easy pause-on-hover.
+                // Let's stick to motion for smooth loop, but for "Zoom on Hover" we just apply it to the children.
+                >
+                    {infiniteScroll.map((src, index) => (
+                        <MobileMockup key={index} src={src} />
                     ))}
-                </div>
+                </motion.div>
+            </div>
+
+            <div className="text-center mt-8">
+                <p className="text-sm text-slate-400">Hover over any result to examine details</p>
             </div>
         </section>
     );
+}
+
+function MobileMockup({ src }) {
+    return (
+        <motion.div
+            className="relative flex-shrink-0 w-[280px] md:w-[320px] rounded-[32px] border-[8px] border-slate-900 bg-slate-900 overflow-hidden shadow-2xl"
+            whileHover={{ scale: 1.1, zIndex: 10, rotate: 0 }}
+            initial={{ rotate: -2 }}
+            whileInView={{ rotate: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            style={{ willChange: "transform" }}
+        >
+            {/* Phone Notch/Bezel details */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-32 bg-slate-900 rounded-b-xl z-20"></div>
+
+            <div className="relative aspect-[9/19.5] w-full bg-slate-800 overflow-hidden rounded-[24px]">
+                <img
+                    src={src}
+                    alt="Trading Result"
+                    className="w-full h-full object-cover"
+                />
+
+                {/* Glass Reflection overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+            </div>
+        </motion.div>
+    )
 }

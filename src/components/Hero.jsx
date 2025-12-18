@@ -20,84 +20,59 @@ function TrustpilotWidget() {
 
 export function Hero() {
     return (
-        <section className="relative pt-20 pb-32 overflow-hidden bg-white">
+        <section className="relative pt-20 pb-0 overflow-hidden bg-white">
             {/* Background Decor */}
-            <div className="absolute top-0 right-0 w-[50%] h-full bg-slate-50 skew-x-12 translate-x-32 -z-1" />
-            <div className="absolute top-20 right-20 w-64 h-64 bg-blue-100 rounded-full blur-[80px] -z-1 opacity-50" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-1">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-50 rounded-full blur-[120px] opacity-40" />
+            </div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
-
+                <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
+                        className="flex flex-col items-center"
                     >
                         <TrustpilotWidget />
 
                         <h1 className="text-5xl lg:text-7xl font-bold font-manrope mb-6 text-slate-900 leading-[1.1]">
-                            Automate Your <br />
-                            <span className="text-blue-600">Trading Income.</span>
+                            Make Your Money <br />
+                            <span className="text-blue-600">Work For You.</span>
                         </h1>
 
-                        <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-lg">
-                            Unlock two powerful income streams with one verified system.
-                            No trading experience required.
+                        <p className="text-xl text-slate-600 mb-6 leading-relaxed max-w-2xl">
+                            The world’s most successful investors use systems and automation to manage their wealth. Now you can too.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-2">
-                                Start Earning Now
+                        <p className="text-lg text-slate-500 mb-10 font-medium">
+                            Syncro is your gateway to automated wealth-building opportunities
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-4 mb-16">
+                            <a href="#how-it-works" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-2">
+                                Learn More
                                 <ArrowRight className="w-5 h-5" />
-                            </button>
-                            <button className="px-8 py-4 rounded-full bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition-all flex items-center justify-center gap-2 font-semibold">
-                                <PlayCircle className="w-5 h-5 text-blue-600" />
-                                See How It Works
-                            </button>
+                            </a>
                         </div>
 
-                        <div className="mt-12 flex items-center gap-8 text-sm font-medium text-slate-500">
-                            <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                                Verified Results
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                                Instant Withdrawals
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                                24/7 Support
-                            </div>
-                        </div>
-                    </motion.div>
+                        {/* Hero Image Section */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                            className="relative w-full max-w-[800px]"
+                        >
+                            {/* Background Glow */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-400/20 blur-[100px] rounded-full -z-1" />
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative hidden lg:block"
-                    >
-                        <div className="relative z-10 bg-white rounded-3xl shadow-2xl border border-slate-100 p-2 transform rotate-2 hover:rotate-0 transition-transform duration-500">
                             <img
-                                src="https://images.unsplash.com/photo-1611974765270-ca12586343bb?auto=format&fit=crop&q=80&w=1000"
-                                alt="Trading Dashboard"
-                                className="rounded-2xl w-full"
+                                src="/images/hero_mockup_new.png"
+                                alt="Syncro Trading Platform"
+                                className="w-full h-auto relative z-10 drop-shadow-2xl"
                             />
-
-                            {/* Floating Badge */}
-                            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-4 animate-bounce-slow">
-                                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                                    <TrendingUpIcon />
-                                </div>
-                                <div>
-                                    <p className="text-xs text-slate-500 font-semibold uppercase">Monthly Return</p>
-                                    <p className="text-xl font-bold text-slate-900">+12.08%</p>
-                                </div>
-                            </div>
-                        </div>
+                        </motion.div>
                     </motion.div>
-
                 </div>
             </div>
         </section>

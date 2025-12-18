@@ -28,22 +28,21 @@ const TESTIMONIALS = [
 
 export function SuccessStories() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section id="testimonials" className="py-24 bg-white relative overflow-hidden">
             {/* Background Decor */}
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <span className="text-blue-600 font-semibold tracking-wide uppercase text-sm bg-blue-50 px-4 py-1 rounded-full">
-                        Success Stories
-                    </span>
-                    <h2 className="text-3xl md:text-5xl font-bold mt-4 text-slate-900">
-                        Trusted by Investors <br />
-                        <span className="text-blue-600">Worldwide.</span>
+                    <h2 className="text-3xl md:text-5xl font-bold mt-4 text-slate-900 mb-6">
+                        What our clients say
                     </h2>
+                    <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+                        Real experiences from people using Syncro for hands-off access to automated trading.
+                    </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-8 mb-16">
                     {TESTIMONIALS.map((item, index) => (
                         <motion.div
                             key={index}
@@ -51,33 +50,37 @@ export function SuccessStories() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white p-8 rounded-2xl border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all group"
+                            className="bg-white p-8 rounded-none border border-slate-200 shadow-sm hover:shadow-md transition-all group relative"
                         >
-                            <div className="flex gap-1 mb-6">
-                                {[...Array(item.rating)].map((_, i) => (
-                                    <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
-                                ))}
+                            <div className="flex justify-between items-start mb-4">
+                                <div className="flex gap-1">
+                                    {[...Array(item.rating)].map((_, i) => (
+                                        <div key={i} className="bg-[#00b67a] p-1">
+                                            <Star className="w-4 h-4 text-white fill-white" />
+                                        </div>
+                                    ))}
+                                </div>
+                                <img src="https://cdn.trustpilot.net/brand-assets/1.1.0/logo-black.svg" alt="Trustpilot" className="h-5 opacity-50" />
                             </div>
 
-                            <Quote className="w-10 h-10 text-blue-100 mb-6 group-hover:text-blue-500 transition-colors" />
+                            <h4 className="font-bold text-slate-900 mb-2">{item.title || "Experience with Syncro"}</h4> {/* Added title placeholder if not in data, or just use generic */}
 
-                            <p className="text-slate-600 leading-relaxed mb-8">
+                            <p className="text-slate-600 leading-relaxed mb-6 text-sm">
                                 "{item.content}"
                             </p>
 
-                            <div className="flex items-center gap-4">
-                                <img
-                                    src={item.image}
-                                    alt={item.name}
-                                    className="w-12 h-12 rounded-full object-cover border-2 border-slate-100"
-                                />
-                                <div>
-                                    <h4 className="font-bold text-slate-900">{item.name}</h4>
-                                    <p className="text-sm text-slate-500">{item.role}</p>
-                                </div>
+                            <div className="flex items-center gap-3 border-t border-slate-100 pt-4">
+                                <div className="font-bold text-slate-900 text-sm">{item.name}</div>
+                                <div className="text-slate-400 text-xs">Verified Client</div>
                             </div>
                         </motion.div>
                     ))}
+                </div>
+
+                <div className="text-center">
+                    <a href="#results" className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold transition-all shadow-xl shadow-blue-600/20">
+                        See client results
+                    </a>
                 </div>
             </div>
         </section>
