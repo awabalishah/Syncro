@@ -1,170 +1,125 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
-
-const steps = [
-    {
-        num: "01",
-        title: "Fund your broker account",
-        desc: "Your money stays in your own broker account, and you remain in full control at all times."
-    },
-    {
-        num: "02",
-        title: "Connect through Syncro",
-        desc: "A simple, step-by-step guide is provided during signup to securely connect your account."
-    },
-    {
-        num: "03",
-        title: "Benefit from automation",
-        desc: "Once connected, the system runs automatically in the background — no daily involvement required."
-    }
-];
+import React from 'react';
+import { motion } from 'framer-motion';
+import {
+    Wallet,
+    Link2,
+    Bot,
+    Activity,
+    BarChart3,
+    ArrowRight,
+    MessageSquare,
+    ExternalLink
+} from 'lucide-react';
 
 export function HowItWorks() {
-    const [activeStep, setActiveStep] = useState(0);
-    const containerRef = useRef(null);
-
-    // Track scroll progress of the entire section
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
+    const steps = [
+        {
+            num: "01",
+            title: "Set Up Your Broker Account",
+            desc: "You open and fund your own broker account using our simple setup guides, available through a dedicated link inside the Syncro Discord community. Your money stays fully under your control at all times, and you can withdraw whenever you want.",
+            icon: <Wallet className="w-8 h-8 text-blue-600" />,
+            span: "md:col-span-2",
+            color: "bg-blue-50"
+        },
+        {
+            num: "02",
+            title: "Connect to Platform",
+            desc: "You log in to MetaTrader 5 using broker details. No technical setup needed.",
+            icon: <Link2 className="w-8 h-8 text-indigo-600" />,
+            span: "md:col-span-1",
+            color: "bg-indigo-50"
+        },
+        {
+            num: "03",
+            title: "Connect Through Syncro",
+            desc: "Follow a straightforward connection process to link your account to the bot. Support is available in our Discord.",
+            icon: <Bot className="w-8 h-8 text-purple-600" />,
+            span: "md:col-span-1",
+            color: "bg-purple-50"
+        },
+        {
+            num: "04",
+            title: "Automated Trading",
+            desc: "Once connected, trades execute automatically based on predefined rules and built-in risk controls. No manual management required.",
+            icon: <Activity className="w-8 h-8 text-emerald-600" />,
+            span: "md:col-span-1",
+            color: "bg-emerald-50"
+        },
+        {
+            num: "05",
+            title: "Monitor Anytime",
+            desc: "Check performance anytime through MT5 or our live, independently verified link. Everything is transparent and real-time.",
+            icon: <BarChart3 className="w-8 h-8 text-cyan-600" />,
+            span: "md:col-span-1",
+            color: "bg-cyan-50",
+            link: "https://www.myfxbook.com/members/syncro_automation" // Placeholder
+        }
+    ];
 
     return (
-        <section ref={containerRef} id="how-it-works" className="relative bg-slate-50">
-
-            {/* Desktop Layout: Sticky Left, Scrolling Right */}
-            <div className="hidden lg:flex">
-
-                {/* Sticky Sidebar */}
-                <div className="w-1/2 h-screen sticky top-0 flex flex-col justify-center items-start p-20 border-r border-slate-200 bg-white z-10">
-                    <div className="max-w-md">
-                        <h2 className="text-4xl font-bold font-manrope text-slate-900 mb-2">How Syncro Works</h2>
-                        <p className="text-xl text-blue-600 font-semibold mb-6">Simple. Automated. Hands off.</p>
-                        <p className="text-slate-500 mb-12">Get set up in 3 easy steps</p>
-
-                        <div className="relative h-48 overflow-hidden mb-8">
-                            <motion.div
-                                animate={{ y: -activeStep * 100 + '%' }} // Slide numbers up/down
-                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                className="flex flex-col h-full"
-                            >
-                                {steps.map((step, index) => (
-                                    <div key={index} className="h-full flex items-center">
-                                        <div className="text-8xl font-black text-slate-900 leading-none tracking-tighter opacity-10">
-                                            {step.num}
-                                        </div>
-                                    </div>
-                                ))}
-                            </motion.div>
-                        </div>
-
-                        <div className="h-1 w-full bg-slate-100 mb-8 rounded-full overflow-hidden">
-                            <motion.div
-                                style={{ scaleX: scrollYProgress }}
-                                className="h-full bg-blue-600 origin-left"
-                            />
-                        </div>
-
-                        <div className="mb-8">
-                            <a href="#technology" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold transition-all shadow-lg shadow-blue-600/20">
-                                Explore the technology
-                            </a>
-                        </div>
-                        <p className="text-xs text-slate-400 max-w-xs leading-relaxed">
-                            Dedicated support is available inside the private Syncro Discord server to assist with setup, questions, and ongoing support.
-                        </p>
-                    </div>
+        <section id="how-it-works" className="py-24 bg-white overflow-hidden">
+            <div className="container mx-auto px-6">
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">How Syncro <span className="text-blue-600">Works</span></h2>
+                    <p className="text-slate-600 max-w-2xl mx-auto text-lg font-medium">
+                        A seamless, automated journey to smarter wealth management.
+                    </p>
                 </div>
 
-                {/* Scrolling Content */}
-                <div className="w-1/2">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     {steps.map((step, index) => (
-                        <StepCard
+                        <motion.div
                             key={index}
-                            step={step}
-                            index={index}
-                            setActiveStep={setActiveStep}
-                        />
-                    ))}
-                    {/* Extra padding at bottom to allow full scroll */}
-                    <div className="h-[50vh]"></div>
-                </div>
-            </div>
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            whileHover={{
+                                y: -5,
+                                scale: 1.02,
+                                transition: { duration: 0.2 }
+                            }}
+                            className={`${step.span} ${step.color} p-8 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col relative group overflow-hidden`}
+                        >
+                            {/* Number Background Decoration */}
+                            <div className="absolute -right-4 -top-4 text-9xl font-black text-slate-900/[0.02] select-none pointer-events-none group-hover:text-blue-600/[0.03] transition-colors">
+                                {step.num}
+                            </div>
 
-            {/* Mobile Layout: Stacked */}
-            <div className="lg:hidden py-24 px-6">
-                <div className="mb-12">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-2">How Syncro Works</h2>
-                    <p className="text-lg text-blue-600 font-semibold mb-2">Simple. Automated. Hands off.</p>
-                    <p className="text-slate-500">Get set up in 3 easy steps</p>
-                </div>
-                <div className="space-y-12">
-                    {steps.map((step, index) => (
-                        <div key={index} className="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg shadow-slate-200/50">
-                            <div className="text-5xl font-black text-blue-600/20 mb-4">{step.num}</div>
-                            <h3 className="text-2xl font-bold text-slate-900 mb-4">{step.title}</h3>
-                            <p className="text-slate-600 leading-relaxed mb-6">{step.desc}</p>
-                            {index === 2 && (
-                                <p className="text-sm text-slate-400 bg-slate-50 p-4 rounded-lg border border-slate-100">
-                                    Dedicated support is available inside the private Syncro Discord server.
-                                </p>
+                            <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-8 shadow-sm relative z-10 transition-transform group-hover:scale-110">
+                                {step.icon}
+                            </div>
+
+                            <h3 className="text-2xl font-bold text-slate-900 mb-4 relative z-10">{step.title}</h3>
+                            <p className="text-slate-600 leading-relaxed mb-6 relative z-10 text-sm">
+                                {step.desc}
+                            </p>
+
+                            {(index === 0 || index === 2) && (
+                                <div className="mt-auto relative z-10">
+                                    <div className="flex items-center gap-2 text-xs font-bold text-blue-600 bg-blue-100/50 w-fit px-3 py-1.5 rounded-full">
+                                        <MessageSquare className="w-3.5 h-3.5" />
+                                        Discord Support Included
+                                    </div>
+                                </div>
                             )}
-                        </div>
+
+                            {step.link && (
+                                <a
+                                    href={step.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-auto inline-flex items-center gap-2 text-blue-600 font-bold hover:underline relative z-10 transition-all group-hover:translate-x-1"
+                                >
+                                    View Live Performance
+                                    <ExternalLink className="w-4 h-4" />
+                                </a>
+                            )}
+                        </motion.div>
                     ))}
-                </div>
-                <div className="mt-12 text-center">
-                    <a href="#technology" className="inline-block px-8 py-4 bg-blue-600 text-white rounded-full font-bold shadow-xl shadow-blue-600/20">
-                        Explore the technology
-                    </a>
+
                 </div>
             </div>
         </section>
     );
-}
-
-function StepCard({ step, index, setActiveStep }) {
-    return (
-        <motion.div
-            className="h-screen flex items-center p-20"
-            onViewportEnter={() => setActiveStep(index)}
-            viewport={{ margin: "-50% 0px -50% 0px" }} // Trigger when element is in the middle
-        >
-            <div className={`transition-opacity duration-500`}>
-                <h3 className="text-3xl font-bold mb-6 text-slate-900">{step.title}</h3>
-                <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
-                    {step.desc}
-                </p>
-
-                {/* Decorative Elements specific to steps */}
-                <div className="mt-12 p-6 bg-white rounded-2xl shadow-xl border border-slate-100">
-                    {index === 0 && (
-                        <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">$</div>
-                            <div>
-                                <div className="text-sm font-bold text-slate-800">Broker Account</div>
-                                <div className="text-xs text-slate-500">Funds Secured</div>
-                            </div>
-                        </div>
-                    )}
-                    {index === 1 && (
-                        <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">✓</div>
-                            <div className="text-sm font-semibold text-slate-700">Syncro Connected</div>
-                        </div>
-                    )}
-                    {index === 2 && (
-                        <div className="space-y-2">
-                            <div className="flex justify-between text-sm">
-                                <span>Automation</span>
-                                <span className="text-green-600 font-bold">Active</span>
-                            </div>
-                            <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                                <div className="h-full w-full bg-green-500 animate-pulse"></div>
-                            </div>
-                        </div>
-                    )}
-                </div>
-            </div>
-        </motion.div>
-    )
 }

@@ -20,18 +20,18 @@ function TrustpilotWidget() {
 
 export function Hero() {
     return (
-        <section className="relative pt-20 pb-20 overflow-hidden bg-white min-h-[90vh] flex items-center">
+        <section className="relative pt-20 pb-0 md:pt-32 overflow-hidden bg-white min-h-[90vh] flex items-stretch">
             {/* Background Decor */}
             <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-50/50 blur-[120px] rounded-full -z-1 translate-x-1/4" />
             <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-indigo-50/30 blur-[100px] rounded-full -z-1 -translate-x-1/4" />
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="container mx-auto px-6 relative z-10 flex items-stretch">
+                <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="flex flex-col items-start text-left"
+                        className="flex flex-col items-start text-left py-20"
                     >
                         <TrustpilotWidget />
 
@@ -53,6 +53,9 @@ export function Hero() {
                                 Learn More
                                 <ArrowRight className="w-5 h-5" />
                             </a>
+                            <button className="bg-white border-2 border-solid border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center">
+                                Join the waitlist
+                            </button>
                         </div>
 
                         <div className="flex items-center gap-6 mt-4">
@@ -67,28 +70,20 @@ export function Hero() {
                         </div>
                     </motion.div>
 
-                    {/* Hero Image Section */}
+                    {/* Hero Image Section - Bleeding to right and bottom */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.8, rotateY: -10 }}
-                        animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                        initial={{ opacity: 0, scale: 0.9, x: 50 }}
+                        animate={{ opacity: 1, scale: 1, x: 0 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        whileHover={{
-                            rotateY: 15,
-                            rotateX: 5,
-                            scale: 1.05,
-                            transition: { duration: 0.5 }
-                        }}
-                        className="relative w-full max-w-[600px] mx-auto lg:ml-auto perspective-1000"
-                        style={{ transformStyle: 'preserve-3d' }}
+                        className="relative w-full self-end lg:mr-[-10%]"
                     >
                         {/* Background Glow */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[80%] bg-blue-600/20 blur-[100px] rounded-full -z-1 animate-pulse" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[80%] bg-blue-600/10 blur-[100px] rounded-full -z-1" />
 
                         <img
                             src="/images/hero-phone-highres.png"
                             alt="Syncro Trading Platform"
-                            className="w-full h-auto relative z-10 drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)]"
-                            style={{ transform: 'translateZ(50px)' }}
+                            className="w-full h-auto block relative z-10"
                         />
                     </motion.div>
                 </div>

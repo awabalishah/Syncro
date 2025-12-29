@@ -8,8 +8,8 @@ export function ProfitShare() {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Fees & transparency</h2>
-                    <h3 className="text-xl text-blue-600 font-bold mb-8">Clear. Fair. Performance Based</h3>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Profit Share & Transparency</h2>
+                    <h3 className="text-xl text-blue-600 font-bold mb-8 text-center uppercase tracking-widest">Clear. Fair. Performance Based</h3>
                     <p className="text-slate-600 text-lg leading-relaxed">
                         If your account doesn’t grow in a given month, you pay nothing.
                         Fees are worked out monthly and apply only to the profit made during that month.
@@ -53,19 +53,19 @@ export function ProfitShare() {
                         className="bg-slate-900 p-10 rounded-[2.5rem] border border-slate-800 shadow-2xl perspective-1000"
                         style={{ transformStyle: 'preserve-3d' }}
                     >
-                        <h3 className="text-2xl font-bold mb-8 text-white" style={{ transform: 'translateZ(30px)' }}>Profit Sharing Tiers</h3>
+                        <h3 className="text-2xl font-bold mb-8 text-white" style={{ transform: 'translateZ(30px)' }}>Profit Retention Model</h3>
                         <div className="space-y-4">
-                            <div className="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 flex justify-between items-center" style={{ transform: 'translateZ(20px)' }}>
-                                <span className="text-slate-300 font-medium text-lg">Profits 0% to 6%</span>
-                                <span className="text-2xl font-bold text-blue-400">20% Fee</span>
+                            <div className="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 flex flex-col items-start gap-1" style={{ transform: 'translateZ(20px)' }}>
+                                <span className="text-slate-300 font-medium text-lg">0% – 6% Monthly Balance Growth</span>
+                                <span className="text-xl font-bold text-blue-400">You keep 80% of net profits</span>
                             </div>
-                            <div className="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 flex justify-between items-center" style={{ transform: 'translateZ(40px)' }}>
-                                <span className="text-slate-300 font-medium text-lg">Profits 6% to 10%</span>
-                                <span className="text-2xl font-bold text-blue-400">25% Fee</span>
+                            <div className="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 flex flex-col items-start gap-1" style={{ transform: 'translateZ(40px)' }}>
+                                <span className="text-slate-300 font-medium text-lg">6% – 10% Monthly Balance Growth</span>
+                                <span className="text-xl font-bold text-blue-400">You keep 75% of net profits</span>
                             </div>
-                            <div className="p-6 bg-blue-600 rounded-2xl flex justify-between items-center shadow-xl shadow-blue-600/20" style={{ transform: 'translateZ(60px)' }}>
-                                <span className="text-blue-50 font-medium text-lg">Profits 10% or more</span>
-                                <span className="text-2xl font-bold text-white">30% Fee</span>
+                            <div className="p-6 bg-blue-600 rounded-2xl flex flex-col items-start gap-1 shadow-xl shadow-blue-600/20" style={{ transform: 'translateZ(60px)' }}>
+                                <span className="text-blue-50 font-medium text-lg">10%+ Monthly Balance Growth</span>
+                                <span className="text-xl font-bold text-white">You keep 70% of net profits</span>
                             </div>
                         </div>
                         <p className="mt-8 text-slate-400 text-sm text-center">

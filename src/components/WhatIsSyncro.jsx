@@ -32,21 +32,28 @@ export function WhatIsSyncro() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="p-8 rounded-2xl bg-white border border-slate-100 shadow-lg shadow-slate-200/50 hover:border-blue-500/30 transition-all group hover:-translate-y-1"
+                            whileHover={{
+                                y: -10,
+                                rotateY: 5,
+                                rotateX: 2,
+                                transition: { duration: 0.3 }
+                            }}
+                            className="p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col perspective-1000"
+                            style={{ transformStyle: 'preserve-3d' }}
                         >
-                            <div className="w-12 h-12 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 group-hover:bg-blue-50 group-hover:border-blue-100 transition-colors">
+                            <div className="w-14 h-14 rounded-2xl bg-blue-50/50 flex items-center justify-center mb-8 shadow-inner border border-blue-100/50" style={{ transform: 'translateZ(20px)' }}>
                                 {feature.icon}
                             </div>
-                            <h3 className="text-xl font-bold mb-4 text-slate-900">{feature.title}</h3>
-                            <p className="text-slate-600 leading-relaxed">
+                            <h3 className="text-2xl font-bold mb-4 text-slate-900" style={{ transform: 'translateZ(10px)' }}>{feature.title}</h3>
+                            <p className="text-slate-600 leading-relaxed text-sm" style={{ transform: 'translateZ(5px)' }}>
                                 {feature.description}
                             </p>
                         </motion.div>

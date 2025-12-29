@@ -80,8 +80,7 @@ export function Referral() {
 
                         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
                             <div className="text-left">
-                                <h3 className="text-2xl font-bold mb-2">Ready to start earning?</h3>
-                                <p className="text-blue-100">Apply for your referral link today and join our community.</p>
+                                <h3 className="text-2xl md:text-3xl font-bold text-white">Ready to start earning?</h3>
                             </div>
                             <a
                                 href="https://form.typeform.com/to/d75elwPl"
@@ -89,7 +88,7 @@ export function Referral() {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-white text-blue-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105"
                             >
-                                Get Your Link
+                                Join our Waitlist
                                 <ArrowRight className="w-5 h-5" />
                             </a>
                         </div>

@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const SCREENSHOTS = [
+    "/images/new_result_0.png",
+    "/images/new_result_1.png",
+    "/images/new_result_2.png",
+    "/images/new_result_3.png",
     "/images/uploaded_image_0_1765819164973.png",
     "/images/uploaded_image_5_1766074384626.png",
     "/images/uploaded_image_6_1766074384626.png",
@@ -19,21 +23,16 @@ export function Results() {
     return (
         <section id="results" className="py-24 bg-slate-50 overflow-hidden relative">
             <div className="container mx-auto px-6 mb-16">
-                <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-                    <div className="max-w-xl">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Client Results</h2>
-                        <p className="text-slate-600 text-lg">
-                            Real client results using the automated trading system
-                        </p>
-                    </div>
-                    <a href="#fees" className="px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-colors">
-                        Fees & transparency
-                    </a>
+                <div className="text-center">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Client Results</h2>
+                    <p className="text-slate-600 text-lg">
+                        Real client results using the automated trading system
+                    </p>
                 </div>
             </div>
 
             {/* Infinite Marquee Slider */}
-            <div className="relative w-full overflow-hidden py-10">
+            <div className="relative w-full overflow-hidden py-10 mb-20">
                 <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10" />
                 <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10" />
 
@@ -55,8 +54,10 @@ export function Results() {
                 </motion.div>
             </div>
 
-            <div className="text-center mt-8">
-                <p className="text-sm text-slate-400">Hover over any result to examine details</p>
+            <div className="container mx-auto px-6 text-center">
+                <a href="#fees" className="px-10 py-4 border-2 border-blue-600 text-blue-600 font-bold rounded-full hover:bg-blue-600 hover:text-white transition-all transform hover:scale-105">
+                    Fees & transparency
+                </a>
             </div>
         </section>
     );

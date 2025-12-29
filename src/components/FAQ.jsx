@@ -224,8 +224,8 @@ export function FAQ() {
                                     setOpenIndex(0);
                                 }}
                                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all whitespace-nowrap lg:whitespace-normal text-left ${activeCategory === cat.id
-                                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20'
-                                        : 'bg-white text-slate-600 hover:bg-white/80 border border-slate-100'
+                                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20'
+                                    : 'bg-white text-slate-600 hover:bg-white/80 border border-slate-100'
                                     }`}
                             >
                                 <span className={activeCategory === cat.id ? 'text-white' : 'text-blue-600'}>
@@ -253,20 +253,6 @@ export function FAQ() {
                                 onClick={() => setOpenIndex(openIndex === idx ? -1 : idx)}
                             />
                         ))}
-
-                        <div className="mt-12 p-6 bg-blue-50 rounded-2xl border border-blue-100 flex flex-col sm:flex-row items-center justify-between gap-6">
-                            <div>
-                                <h4 className="text-slate-900 font-bold text-lg mb-1">Still have questions?</h4>
-                                <p className="text-slate-600 text-sm">Our support team is ready to help you on Discord.</p>
-                            </div>
-                            <a
-                                href="#support"
-                                className="px-6 py-3 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-all shadow-md shadow-blue-600/10 flex items-center gap-2"
-                            >
-                                <MessageCircle className="w-5 h-5" />
-                                Open a Ticket
-                            </a>
-                        </div>
                     </motion.div>
                 </div>
             </div>
