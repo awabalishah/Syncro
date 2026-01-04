@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Gift, ArrowRight, Link, Percent, Users, ShieldCheck } from 'lucide-react';
+import { SectionCTA } from './SectionCTA';
 
 export function Referral() {
     const rewards = [
@@ -74,7 +75,7 @@ export function Referral() {
                         ))}
                     </div>
 
-                    <div className="bg-blue-600 rounded-[3rem] p-12 text-white relative overflow-hidden shadow-2xl shadow-blue-600/30">
+                    <div className="bg-blue-600 rounded-[3rem] p-12 text-white relative overflow-hidden shadow-2xl shadow-blue-600/30 mb-20">
                         {/* Decorative bubbles */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
@@ -93,6 +94,8 @@ export function Referral() {
                             </a>
                         </div>
                     </div>
+
+                    <SectionCTA nextSectionId="hero" label="Back to Top" />
                 </motion.div>
             </div>
         </section>

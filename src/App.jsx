@@ -1,37 +1,19 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
-import { Hero } from './components/Hero';
-import { WhatIsSyncro } from './components/WhatIsSyncro';
-import { HowItWorks } from './components/HowItWorks';
-import { Technology } from './components/Technology';
-import { Results } from './components/Results';
-import { ProfitShare } from './components/ProfitShare';
-import { Referral } from './components/Referral';
-import { GrowthCalculator } from './components/GrowthCalculator';
-import { SuccessStories } from './components/SuccessStories';
-import { FAQ } from './components/FAQ';
-import { Features } from './components/Features';
+import { Home } from './pages/Home';
+import { FeaturesPage } from './pages/FeaturesPage';
 
 function App() {
   return (
-    <Layout>
-      <Hero />
-      <WhatIsSyncro />
-      <GrowthCalculator />
-      <HowItWorks />
-      <Technology />
-      <Features />
-      <Results />
-      <SuccessStories />
-      <FAQ />
-      <ProfitShare />
-      <Referral />
-
-
-
-      {/* Sections will be added here */}
-    </Layout>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/features" element={<FeaturesPage />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
-
 
 export default App;

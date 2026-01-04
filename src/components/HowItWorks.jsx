@@ -6,10 +6,10 @@ import {
     Bot,
     Activity,
     BarChart3,
-    ArrowRight,
     MessageSquare,
     ExternalLink
 } from 'lucide-react';
+import { SectionCTA } from './SectionCTA';
 
 export function HowItWorks() {
     const steps = [
@@ -66,7 +66,7 @@ export function HowItWorks() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
                     {steps.map((step, index) => (
                         <motion.div
                             key={index}
@@ -119,6 +119,8 @@ export function HowItWorks() {
                     ))}
 
                 </div>
+
+                <SectionCTA nextSectionId="technology" label="Our Technology" />
             </div>
         </section>
     );

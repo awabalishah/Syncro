@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, TrendingUp, Users } from 'lucide-react';
+import { SectionCTA } from './SectionCTA';
 
 export function WhatIsSyncro() {
     const features = [
@@ -32,7 +33,7 @@ export function WhatIsSyncro() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
@@ -59,6 +60,8 @@ export function WhatIsSyncro() {
                         </motion.div>
                     ))}
                 </div>
+
+                <SectionCTA nextSectionId="performance" label="Potential Growth" />
             </div>
         </section>
     );

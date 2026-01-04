@@ -14,9 +14,11 @@ import {
     Calendar,
     ExternalLink
 } from 'lucide-react';
+import { SectionCTA } from './SectionCTA';
+import { BackgroundIcons } from './BackgroundIcons';
 
 export function Technology() {
-    const row1 = [
+    const techItems = [
         {
             icon: <Coins className="w-5 h-5" />,
             title: "XAUUSD (spot gold)",
@@ -31,10 +33,7 @@ export function Technology() {
             icon: <BarChart3 className="w-5 h-5" />,
             title: "Short market exposure",
             desc: "Trades typically last minutes, reducing prolonged exposure to market volatility."
-        }
-    ];
-
-    const row2 = [
+        },
         {
             icon: <Target className="w-5 h-5" />,
             title: "AI-optimised entry logic",
@@ -54,10 +53,7 @@ export function Technology() {
             icon: <Calendar className="w-5 h-5" />,
             title: "Controlled trading schedule",
             desc: "Trades run Monday to Thursday only; Fridays are excluded to avoid unstable conditions."
-        }
-    ];
-
-    const row3 = [
+        },
         {
             icon: <ShieldAlert className="w-5 h-5" />,
             title: "Equity drawdown protection",
@@ -80,75 +76,64 @@ export function Technology() {
         }
     ];
 
-    const MarqueeRow = ({ items, direction = 1 }) => (
-        <div className="flex overflow-hidden py-4 select-none">
-            <motion.div
-                className="flex gap-6 whitespace-nowrap min-w-full"
-                animate={{ x: direction > 0 ? [0, -1920] : [-1920, 0] }}
-                transition={{
-                    duration: 40,
-                    repeat: Infinity,
-                    ease: "linear"
-                }}
-            >
-                {[...items, ...items].map((item, idx) => (
-                    <div
-                        key={idx}
-                        className="flex-shrink-0 w-[400px] p-8 rounded-3xl bg-white border border-slate-100 shadow-lg shadow-slate-200/40 hover:border-blue-500/30 transition-all group"
-                    >
-                        <div className="flex items-start gap-4 h-full">
-                            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-inner border border-blue-100/50">
-                                {item.icon}
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-slate-900 mb-2 text-lg">{item.title}</h3>
-                                <p className="text-sm text-slate-600 whitespace-normal leading-relaxed">
-                                    {item.desc}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </motion.div>
-        </div>
-    );
-
     return (
-        <section id="technology" className="py-32 bg-slate-50 overflow-hidden relative">
+        <section id="technology" className="py-32 bg-slate-900 overflow-hidden relative">
             {/* Background Decor */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-100/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+
+            <BackgroundIcons />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-6xl font-black mb-6 text-slate-900 leading-tight tracking-tight">
-                        Technology <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">Linked Through Syncro</span>
+                    <h2 className="text-4xl md:text-6xl font-black mb-6 text-white leading-tight tracking-tight">
+                        Technology <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">Linked Through Syncro</span>
                     </h2>
-                    <p className="text-slate-500 max-w-2xl mx-auto text-xl font-medium">
+                    <p className="text-slate-400 max-w-2xl mx-auto text-xl font-medium">
                         Built for consistency, safety and long term performance
                     </p>
                 </div>
-            </div>
 
-            <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] space-y-4 mb-20">
-                <MarqueeRow items={row1} direction={1} />
-                <MarqueeRow items={row2} direction={-1} />
-                <MarqueeRow items={row3} direction={1} />
-            </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-20">
+                    {techItems.map((item, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.05 }}
+                            className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl hover:border-blue-500/50 hover:bg-white/[0.08] transition-all duration-300 group flex flex-col h-full"
+                        >
+                            <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 mb-6 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 shadow-inner border border-blue-500/20">
+                                {item.icon}
+                            </div>
+                            <h3 className="font-bold text-white mb-3 text-lg leading-tight">{item.title}</h3>
+                            <p className="text-sm text-slate-400 leading-relaxed">
+                                {item.desc}
+                            </p>
+                        </motion.div>
+                    ))}
+                </div>
 
-            <div className="container mx-auto px-6 relative z-10 text-center">
-                <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    href="https://www.myfxbook.com/members/syncro_automation"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold text-lg transition-all shadow-2xl shadow-blue-600/30 group"
-                >
-                    View Verified Performance
-                    <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </motion.a>
+                <div className="text-center mb-20">
+                    <motion.a
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        href="https://www.myfxbook.com/members/syncro_automation"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold text-lg transition-all shadow-2xl shadow-blue-600/30 group"
+                    >
+                        View Verified Performance
+                        <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </motion.a>
+                </div>
+
+                <SectionCTA nextSectionId="features" label="Key Features" />
             </div>
         </section>
     );
 }
+
+
+

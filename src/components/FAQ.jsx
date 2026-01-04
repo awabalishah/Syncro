@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle, MessageCircle, Shield, BarChart, Zap, Clock, AlertTriangle, Users } from 'lucide-react';
+import { SectionCTA } from './SectionCTA';
 
 const faqCategories = [
     {
@@ -213,7 +214,7 @@ export function FAQ() {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-[300px_1fr] gap-12 items-start">
+                <div className="grid lg:grid-cols-[300px_1fr] gap-12 items-start mb-24">
                     {/* Categories Sidebar */}
                     <div className="flex lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 no-scrollbar">
                         {faqCategories.map((cat) => (
@@ -255,6 +256,8 @@ export function FAQ() {
                         ))}
                     </motion.div>
                 </div>
+
+                <SectionCTA nextSectionId="fees" label="Profit Sharing & Fees" />
             </div>
         </section>
     );

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { TrendingUp, ShieldCheck, CheckCircle2, ExternalLink, Info } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SectionCTA } from './SectionCTA';
 
 const MONTHLY_DATA = [
     { name: 'Jan', return: 5.15 },
@@ -271,12 +272,14 @@ export function GrowthCalculator() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="text-center text-slate-400 text-xs mt-12 max-w-2xl mx-auto"
+                    className="text-center text-slate-400 text-xs mt-12 mb-12 max-w-2xl mx-auto"
                 >
                     <Info className="w-3 h-3 inline mr-1 mb-0.5" />
                     Past performance does not guarantee future results. Trading involves risk.
                     Calculations are based on historical monthly returns of the Syncro Master account for 2025.
                 </motion.p>
+
+                <SectionCTA nextSectionId="how-it-works" label="The Process" />
             </div>
         </section>
     );

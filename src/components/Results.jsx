@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SectionCTA } from './SectionCTA';
 
 const SCREENSHOTS = [
     "/images/new_result_0.png",
@@ -54,10 +55,8 @@ export function Results() {
                 </motion.div>
             </div>
 
-            <div className="container mx-auto px-6 text-center">
-                <a href="#fees" className="px-10 py-4 border-2 border-blue-600 text-blue-600 font-bold rounded-full hover:bg-blue-600 hover:text-white transition-all transform hover:scale-105">
-                    Fees & transparency
-                </a>
+            <div className="container mx-auto px-6">
+                <SectionCTA nextSectionId="testimonials" label="Success Stories" />
             </div>
         </section>
     );
