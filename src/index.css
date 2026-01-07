@@ -91,55 +91,50 @@ button {
 /* Border Beam Animation */
 @keyframes border-beam {
   0% {
-    transform: rotate(0deg);
+    offset-distance: 0%;
   }
 
   100% {
-    transform: rotate(360deg);
+    offset-distance: 100%;
   }
 }
 
 .border-beam {
   position: relative;
-  z-index: 0;
   overflow: hidden;
-  border: none !important;
-  /* Override layout borders */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background-clip: padding-box;
 }
 
 .border-beam::before {
   content: "";
   position: absolute;
-  z-index: -2;
-  left: -50%;
-  top: -50%;
-  width: 200%;
-  height: 200%;
-  background-repeat: no-repeat;
-  background-size: 50% 50%, 50% 50%;
-  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-  background-image: conic-gradient(from 0deg, transparent 0%, #3b82f6 25%, transparent 50%);
-  animation: border-beam 4s linear infinite;
-}
-
-.border-beam::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 2px;
-  top: 2px;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  background: inherit;
+  inset: -1px;
+  padding: 1.5px;
+  /* Define the border thickness here */
+  background: conic-gradient(from 0deg,
+      transparent 0%,
+      #3b82f6 10%,
+      transparent 20%,
+      transparent 50%,
+      #6366f1 60%,
+      transparent 70%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: border-rotate 4s linear infinite;
   border-radius: inherit;
+  z-index: 1;
 }
 
-/* Fallback for components that don't have inherit background properly */
-.bg-blue-600.border-beam::after {
-  background: #2563eb;
-}
+@keyframes border-rotate {
+  from {
+    transform: rotate(0deg);
+  }
 
-.bg-white\/5.border-beam::after {
-  background: rgba(15, 23, 42, 0.95);
-  /* Deep dark for transparency */
+  to {
+    transform: rotate(360deg);
+  }
 }

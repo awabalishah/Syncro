@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 import { SectionCTA } from './SectionCTA';
+import myfxbookLogo from '../assets/myfxbook-logo.png';
 
 const TESTIMONIALS = [
     {
@@ -15,7 +16,11 @@ const TESTIMONIALS = [
         name: "Michael Chen",
         role: "Software Engineer",
         image: "https://randomuser.me/api/portraits/men/32.jpg",
-        content: "The transparency is what sold me. Being able to see the live MyFXBook link before depositing gave me total confidence. Best investment I've made this year.",
+        content: <div className="flex flex-col gap-2">
+            <p>"The transparency is what sold me. Being able to see the live results verified by:</p>
+            <img src={myfxbookLogo} alt="Myfxbook" className="h-4 w-auto self-start grayscale opacity-70" />
+            <p>before depositing gave me total confidence. Best investment I've made this year."</p>
+        </div>,
         rating: 5
     },
     {

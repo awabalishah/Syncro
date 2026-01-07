@@ -12,6 +12,7 @@ import {
     CheckCircle2,
     AlertTriangle
 } from 'lucide-react';
+import myfxbookLogo from '../assets/myfxbook-logo.png';
 
 export function FeaturesPage() {
     // Scroll to top on mount
@@ -54,7 +55,11 @@ export function FeaturesPage() {
         {
             icon: <Eye className="w-8 h-8 text-cyan-600" />,
             title: "Real-Time Transparency",
-            description: "You can see every trade directly inside your own MT5 trading account as shown in our client results section. Performance is tracked through our live, independently verified Myfxbook link that updates in real time."
+            description: <div className="flex flex-col gap-2">
+                <p>You can see every trade directly inside your own MT5 trading account as shown in our client results section. Performance is tracked through our live, independently verified tracking link on:</p>
+                <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto self-start grayscale opacity-70" />
+                <p>that updates in real time.</p>
+            </div>
         },
         {
             icon: <Clock className="w-8 h-8 text-purple-600" />,

@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { SectionCTA } from './SectionCTA';
 import { BackgroundIcons } from './BackgroundIcons';
+import myfxbookLogo from '../assets/myfxbook-logo.png';
 
 export function Technology() {
     const techItems = [
@@ -124,7 +125,7 @@ export function Technology() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold text-lg transition-all shadow-2xl shadow-blue-600/30 group"
                     >
-                        View Verified Performance
+                        View Verified Performance on <img src={myfxbookLogo} alt="Myfxbook" className="h-6 w-auto brightness-0 invert" />
                         <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </motion.a>
                 </div>

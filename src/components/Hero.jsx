@@ -44,16 +44,16 @@ export function Hero() {
                             <span className="text-blue-500">Work For You.</span>
                         </h1>
 
-                        <p className="text-xl text-slate-300 mb-6 leading-relaxed max-w-xl">
+                        <p className="text-xl text-slate-300 mb-4 leading-relaxed max-w-xl">
                             The world’s most successful investors use systems and automation to manage their wealth. Now you can too.
                         </p>
 
-                        <p className="text-lg text-slate-400 mb-10 font-medium max-w-lg">
-                            Syncro is your gateway to automated wealth-building opportunities
+                        <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-xl">
+                            Syncro is your gateway to automated wealth-building opportunities.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                            <a href="#how-it-works" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-2 border-beam">
+                            <a href="#how-it-works" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-2">
                                 Learn More
                                 <ArrowRight className="w-5 h-5" />
                             </a>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle, MessageCircle, Shield, BarChart, Zap, Clock, AlertTriangle, Users } from 'lucide-react';
 import { SectionCTA } from './SectionCTA';
+import myfxbookLogo from '../assets/myfxbook-logo.png';
 
 const faqCategories = [
     {
@@ -26,11 +27,19 @@ const faqCategories = [
         questions: [
             {
                 q: "Where can I view live statistics and historical performance?",
-                a: "You can view live statistics, historical performance, and trading behaviour using the public Myfxbook tracking link. This allows you to review long-term performance, drawdowns, trade frequency, and typical trading times."
+                a: <div className="flex flex-col gap-2">
+                    <p>You can view live statistics, historical performance, and trading behaviour using our public tracking link on:</p>
+                    <img src={myfxbookLogo} alt="Myfxbook" className="h-6 w-auto grayscale opacity-70" />
+                    <p>This allows you to review long-term performance, drawdowns, trade frequency, and typical trading times.</p>
+                </div>
             },
             {
                 q: "Has the bot performed consistently?",
-                a: "Based on the live Myfxbook data, the bot has shown consistent gains since June 2024. Past performance is not a guarantee of future results."
+                a: <div className="flex flex-col gap-2">
+                    <p>Based on the live data verified by:</p>
+                    <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto grayscale opacity-70" />
+                    <p>The bot has shown consistent gains since June 2024. Past performance is not a guarantee of future results.</p>
+                </div>
             }
         ]
     },
@@ -102,7 +111,10 @@ const faqCategories = [
             },
             {
                 q: "What risk level does the bot use by default?",
-                a: "The bot operates at a 30% risk level by default. This is the exact risk setting used for the verified 18+ months of live results shown on the tracking link."
+                a: <div className="flex flex-col gap-2">
+                    <p>The bot operates at a 30% risk level by default. This is the exact risk setting used for the verified 18+ months of live results shown on our official tracking link on:</p>
+                    <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto grayscale opacity-70" />
+                </div>
             },
             {
                 q: "Does the bot risk 30% on every trade?",

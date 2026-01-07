@@ -3,6 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { TrendingUp, ShieldCheck, CheckCircle2, ExternalLink, Info } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SectionCTA } from './SectionCTA';
+import myfxbookLogo from '../assets/myfxbook-logo.png';
 
 const MONTHLY_DATA = [
     { name: 'Jan', return: 5.15 },
@@ -64,8 +65,7 @@ export function GrowthCalculator() {
                     </h2>
 
                     <p className="text-lg text-slate-600">
-                        Our AI-driven strategies undergo rigorous real-time verification.
-                        Explore how a starting capital could have compounded over the last 12 months.
+                        The AI-driven trading bot operates within a strict, rules-based strategy designed to ensure consistency, discipline, and controlled risk. Explore how a starting capital could have compounded over the last 12 months using our 2025 verified results.
                     </p>
                 </div>
 
@@ -77,66 +77,64 @@ export function GrowthCalculator() {
                         viewport={{ once: true }}
                         className="lg:col-span-5"
                     >
-                        <div className="bg-white rounded-[2.5rem] border border-slate-200 shadow-2xl shadow-slate-200/50 p-8 relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 p-8">
-                                <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-50 border border-emerald-100 rounded-full">
+                        <div className="bg-slate-900 rounded-[3rem] border border-slate-800 shadow-2xl shadow-blue-900/20 p-8 relative overflow-hidden group">
+                            <div className="flex items-center justify-between mb-8">
+                                <div className="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full">
                                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                    <span className="text-emerald-600 text-[10px] font-bold uppercase tracking-wider">Live</span>
+                                    <span className="text-blue-400 text-[10px] font-bold uppercase tracking-wider">Live Results</span>
                                 </div>
+                                <ExternalLink className="w-5 h-5 text-slate-500 opacity-50 group-hover:opacity-100 transition-opacity" />
                             </div>
 
                             <div className="mb-10">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <h3 className="text-2xl font-bold text-slate-900">Syncro Verified Results</h3>
-                                    <ExternalLink className="w-5 h-5 text-slate-300" />
-                                </div>
-                                <p className="text-slate-400 text-sm">
-                                    Managed by Syncro AI • Verified by MyFxBook
+                                <h3 className="text-3xl font-black text-white mb-3">Syncro Verified Results</h3>
+                                <p className="text-slate-400 text-sm flex items-center gap-2 font-medium">
+                                    Managed by Syncro AI • <span className="text-blue-400 flex items-center gap-2 font-bold">Verified by <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto" /></span>
                                 </p>
                             </div>
 
                             <div className="space-y-6 mb-10">
-                                <div className="flex items-center justify-between p-6 rounded-2xl bg-slate-50/50 border border-slate-100">
+                                <div className="flex items-center justify-between p-6 rounded-2xl bg-white/5 border border-white/5">
                                     <div>
-                                        <p className="text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-2">Total Gain</p>
-                                        <p className="text-4xl font-bold text-emerald-500">+88.55%</p>
+                                        <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-2">Total Gain</p>
+                                        <p className="text-4xl font-bold text-orange-500">+88.55%</p>
                                     </div>
                                     <div className="w-24 h-12">
-                                        <svg viewBox="0 0 100 40" className="w-full h-full text-emerald-500/30" fill="none" stroke="currentColor" strokeWidth="3">
+                                        <svg viewBox="0 0 100 40" className="w-full h-full text-orange-500" fill="none" stroke="currentColor" strokeWidth="3">
                                             <path d="M0 35 L20 30 L40 32 L60 15 L80 18 L100 5" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-4">
-                                    <div className="p-5 rounded-2xl bg-slate-50/50 border border-slate-100">
-                                        <p className="text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-2">Monthly</p>
-                                        <p className="text-2xl font-bold text-slate-800">7.82%</p>
+                                    <div className="p-5 rounded-2xl bg-white/5 border border-white/5">
+                                        <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-2">Monthly Gain</p>
+                                        <p className="text-2xl font-bold text-emerald-400">7.82%</p>
                                     </div>
-                                    <div className="p-5 rounded-2xl bg-slate-50/50 border border-slate-100">
-                                        <p className="text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-2">Drawdown</p>
-                                        <p className="text-2xl font-bold text-rose-500">4.12%</p>
+                                    <div className="p-5 rounded-2xl bg-white/5 border border-white/5">
+                                        <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-2">Drawdown</p>
+                                        <p className="text-2xl font-bold text-rose-400">4.12%</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="space-y-4 mb-10">
-                                <div className="flex items-center gap-3 text-slate-500 text-sm font-medium">
-                                    <div className="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center">
-                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+                                <div className="flex items-center gap-3 text-slate-400 text-sm font-medium">
+                                    <div className="w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center">
+                                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
                                     </div>
                                     <span>Track Record Verified</span>
                                 </div>
-                                <div className="flex items-center gap-3 text-slate-500 text-sm font-medium">
-                                    <div className="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center">
-                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+                                <div className="flex items-center gap-3 text-slate-400 text-sm font-medium">
+                                    <div className="w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center">
+                                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
                                     </div>
                                     <span>Live Performance Tracking</span>
                                 </div>
                             </div>
 
-                            <button className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 group shadow-xl shadow-blue-600/25">
-                                View Live Stats on MyFxBook
+                            <button className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 group shadow-xl shadow-blue-900/40">
+                                View Live Stats on <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto brightness-0 invert" />
                                 <ExternalLink className="w-4 h-4" />
                             </button>
                         </div>
@@ -150,19 +148,18 @@ export function GrowthCalculator() {
                         className="lg:col-span-7 space-y-8"
                     >
                         {/* Account Growth Example Card */}
-                        <div className="bg-white rounded-[2.5rem] border border-slate-200 shadow-xl shadow-slate-200/50 p-10 relative">
-                            <div className="absolute top-10 right-10 flex flex-col items-end">
-                                <div className="bg-blue-50/50 border border-blue-100 px-6 py-4 rounded-2xl text-right">
+                        <div className="bg-white rounded-[2.5rem] border border-slate-200 shadow-xl shadow-slate-200/50 p-10">
+                            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-12">
+                                <div className="max-w-md">
+                                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Account Growth Example</h3>
+                                    <p className="text-slate-500 text-sm leading-relaxed">
+                                        This example is based on verified 2025 performance data and is shown for illustrative purposes.
+                                    </p>
+                                </div>
+                                <div className="bg-blue-50/50 border border-blue-100 px-6 py-4 rounded-2xl text-left sm:text-right shrink-0">
                                     <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1">Initial Deposit</p>
                                     <p className="text-3xl font-bold text-blue-600">${initialInvestment.toLocaleString()}</p>
                                 </div>
-                            </div>
-
-                            <div className="max-w-md mb-12">
-                                <h3 className="text-2xl font-bold text-slate-900 mb-3">Account Growth Example</h3>
-                                <p className="text-slate-500 text-sm leading-relaxed">
-                                    This example is based on verified 2025 performance data and is shown for illustrative purposes.
-                                </p>
                             </div>
 
                             <div className="relative mb-16 pt-6">

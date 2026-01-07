@@ -10,6 +10,7 @@ import {
     ExternalLink
 } from 'lucide-react';
 import { SectionCTA } from './SectionCTA';
+import myfxbookLogo from '../assets/myfxbook-logo.png';
 
 export function HowItWorks() {
     const steps = [
@@ -111,7 +112,7 @@ export function HowItWorks() {
                                     rel="noopener noreferrer"
                                     className="mt-auto inline-flex items-center gap-2 text-blue-600 font-bold hover:underline relative z-10 transition-all group-hover:translate-x-1"
                                 >
-                                    View Live Performance
+                                    View Live Performance on <img src={myfxbookLogo} alt="Myfxbook" className="h-4 w-auto grayscale group-hover:grayscale-0 transition-all" />
                                     <ExternalLink className="w-4 h-4" />
                                 </a>
                             )}
