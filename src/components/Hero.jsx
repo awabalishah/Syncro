@@ -57,9 +57,14 @@ export function Hero() {
                                 Learn More
                                 <ArrowRight className="w-5 h-5" />
                             </a>
-                            <button className="bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center border-beam">
-                                Join the waitlist
-                            </button>
+                            <a
+                                href="https://discord.gg/4JWUAKPB"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center border-beam"
+                            >
+                                Request Access
+                            </a>
                         </div>
 
                         <div className="flex items-center gap-6 mt-4">

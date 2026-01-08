@@ -103,32 +103,22 @@ export function Technology() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.05 }}
-                            className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl hover:border-blue-500/50 hover:bg-white/[0.08] transition-all duration-300 group flex flex-col h-full"
+                            className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl hover:border-blue-500/50 hover:bg-white/[0.08] transition-all duration-300 group flex flex-col h-full border-beam"
                         >
-                            <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 mb-6 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 shadow-inner border border-blue-500/20">
-                                {item.icon}
+                            <div className="relative z-10 flex flex-col h-full">
+                                <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 mb-6 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 shadow-inner border border-blue-500/20">
+                                    {item.icon}
+                                </div>
+                                <h3 className="font-bold text-white mb-3 text-lg leading-tight">{item.title}</h3>
+                                <p className="text-sm text-slate-400 leading-relaxed">
+                                    {item.desc}
+                                </p>
                             </div>
-                            <h3 className="font-bold text-white mb-3 text-lg leading-tight">{item.title}</h3>
-                            <p className="text-sm text-slate-400 leading-relaxed">
-                                {item.desc}
-                            </p>
                         </motion.div>
                     ))}
                 </div>
 
-                <div className="text-center mb-20">
-                    <motion.a
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        href="https://www.myfxbook.com/members/syncro_automation"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold text-lg transition-all shadow-2xl shadow-blue-600/30 group"
-                    >
-                        View Verified Performance on <img src={myfxbookLogo} alt="Myfxbook" className="h-6 w-auto brightness-0 invert" />
-                        <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </motion.a>
-                </div>
+
 
                 <SectionCTA nextSectionId="features" label="Key Features" />
             </div>

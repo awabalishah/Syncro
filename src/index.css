@@ -102,31 +102,40 @@ button {
 .border-beam {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   background-clip: padding-box;
 }
 
 .border-beam::before {
   content: "";
   position: absolute;
-  inset: -1px;
-  padding: 1.5px;
-  /* Define the border thickness here */
+  inset: 0;
+  padding: 2px;
   background: conic-gradient(from 0deg,
       transparent 0%,
-      #3b82f6 10%,
-      transparent 20%,
+      #60a5fa 2%,
+      #818cf8 5%,
+      #60a5fa 8%,
+      transparent 10%,
       transparent 50%,
-      #6366f1 60%,
-      transparent 70%);
+      #60a5fa 52%,
+      #818cf8 55%,
+      #60a5fa 58%,
+      transparent 60%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-  animation: border-rotate 4s linear infinite;
+  animation: border-rotate 10s linear infinite;
   border-radius: inherit;
-  z-index: 1;
+  z-index: 0;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.border-beam:hover::before {
+  opacity: 1;
+  animation-duration: 3s;
 }
 
 @keyframes border-rotate {

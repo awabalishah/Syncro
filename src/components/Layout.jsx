@@ -26,7 +26,7 @@ export function Layout({ children }) {
         <div className="min-h-screen flex flex-col bg-slate-950">
 
             <header
-                className={`z-50 transition-all duration-500 ${isScrolled
+                className={`z-50 transition-all duration-500 ${isScrolled || !isHomePage
                     ? 'sticky top-0 left-0 right-0 bg-slate-950/90 backdrop-blur-md border-b border-white/5 h-20 shadow-lg'
                     : 'absolute left-0 right-0 bg-transparent border-b border-transparent h-24'
                     }`}
@@ -47,7 +47,7 @@ export function Layout({ children }) {
                         <a href={getNavLink("profit-share")} className="hover:text-white transition-colors">Profit Share</a>
 
                         <a
-                            href="https://discord.gg/syncro"
+                            href="https://discord.gg/4JWUAKPB"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 text-sm font-bold"
@@ -87,7 +87,7 @@ export function Layout({ children }) {
                             <a href={getNavLink("results")} onClick={() => setIsMenuOpen(false)}>Results</a>
                             <a href={getNavLink("profit-share")} onClick={() => setIsMenuOpen(false)}>Profit Share</a>
                             <a
-                                href="https://discord.gg/syncro"
+                                href="https://discord.gg/4JWUAKPB"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-blue-600 text-white py-3 rounded-lg w-full font-bold text-center shadow-lg shadow-blue-600/20"

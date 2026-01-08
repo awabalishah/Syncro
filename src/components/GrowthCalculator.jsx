@@ -1,29 +1,29 @@
 import React, { useState, useMemo } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, LabelList } from 'recharts';
 import { TrendingUp, ShieldCheck, CheckCircle2, ExternalLink, Info } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SectionCTA } from './SectionCTA';
 import myfxbookLogo from '../assets/myfxbook-logo.png';
 
 const MONTHLY_DATA = [
-    { name: 'Jan', return: 5.15 },
-    { name: 'Feb', return: 6.68 },
-    { name: 'Mar', return: 11.52 },
-    { name: 'Apr', return: 5.90 },
-    { name: 'May', return: 10.40 },
-    { name: 'Jun', return: 5.27 },
-    { name: 'Jul', return: 8.85 },
-    { name: 'Aug', return: 6.83 },
-    { name: 'Sep', return: 10.57 },
-    { name: 'Oct', return: 12.08 },
-    { name: 'Nov', return: 6.57 },
-    { name: 'Dec', return: 2.76 },
+    { name: 'Jan 2025', return: 5.15 },
+    { name: 'Feb 2025', return: 6.68 },
+    { name: 'Mar 2025', return: 11.52 },
+    { name: 'Apr 2025', return: 5.90 },
+    { name: 'May 2025', return: 10.40 },
+    { name: 'Jun 2025', return: 5.27 },
+    { name: 'Jul 2025', return: 8.85 },
+    { name: 'Aug 2025', return: 6.83 },
+    { name: 'Sep 2025', return: 10.57 },
+    { name: 'Oct 2025', return: 12.08 },
+    { name: 'Nov 2025', return: 6.57 },
+    { name: 'Dec 2025', return: 4.78 },
 ];
 
 export function GrowthCalculator() {
     const [initialInvestment, setInitialInvestment] = useState(1000);
 
-    const { chartData, finalBalance, totalProfit } = useMemo(() => {
+    const { chartData, finalBalance, totalProfit, totalROI } = useMemo(() => {
         let currentBalance = initialInvestment;
         const data = MONTHLY_DATA.map(month => {
             const profit = currentBalance * (month.return / 100);
@@ -35,10 +35,14 @@ export function GrowthCalculator() {
             };
         });
 
+        const profit = currentBalance - initialInvestment;
+        const roi = (profit / initialInvestment) * 100;
+
         return {
             chartData: data,
             finalBalance: Math.round(currentBalance),
-            totalProfit: Math.round(currentBalance - initialInvestment)
+            totalProfit: Math.round(profit),
+            totalROI: roi.toFixed(2)
         };
     }, [initialInvestment]);
 
@@ -61,7 +65,7 @@ export function GrowthCalculator() {
                     </motion.div>
 
                     <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                        See How Your Capital <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Could Grow</span>
+                        2025 Verified <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Monthly Performance</span>
                     </h2>
 
                     <p className="text-lg text-slate-600">
@@ -77,7 +81,7 @@ export function GrowthCalculator() {
                         viewport={{ once: true }}
                         className="lg:col-span-5"
                     >
-                        <div className="bg-slate-900 rounded-[3rem] border border-slate-800 shadow-2xl shadow-blue-900/20 p-8 relative overflow-hidden group">
+                        <div className="bg-slate-900 rounded-[3rem] border-2 border-slate-800 shadow-[0_32px_64px_-16px_rgba(255,255,255,0.05)] p-8 relative overflow-hidden group">
                             <div className="flex items-center justify-between mb-8">
                                 <div className="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full">
                                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -96,12 +100,12 @@ export function GrowthCalculator() {
                             <div className="space-y-6 mb-10">
                                 <div className="flex items-center justify-between p-6 rounded-2xl bg-white/5 border border-white/5">
                                     <div>
-                                        <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-2">Total Gain</p>
-                                        <p className="text-4xl font-bold text-orange-500">+88.55%</p>
+                                        <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-2">Total Gain (2025)</p>
+                                        <p className="text-4xl font-bold text-orange-500">+{totalROI}%</p>
                                     </div>
                                     <div className="w-24 h-12">
                                         <svg viewBox="0 0 100 40" className="w-full h-full text-orange-500" fill="none" stroke="currentColor" strokeWidth="3">
-                                            <path d="M0 35 L20 30 L40 32 L60 15 L80 18 L100 5" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M0 35 L10 32 L20 34 L30 25 L40 28 L50 15 L60 18 L70 8 L80 12 L90 2 L100 5" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                     </div>
                                 </div>
@@ -109,7 +113,7 @@ export function GrowthCalculator() {
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="p-5 rounded-2xl bg-white/5 border border-white/5">
                                         <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-2">Monthly Gain</p>
-                                        <p className="text-2xl font-bold text-emerald-400">7.82%</p>
+                                        <p className="text-2xl font-bold text-emerald-400">7.84%</p>
                                     </div>
                                     <div className="p-5 rounded-2xl bg-white/5 border border-white/5">
                                         <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-2">Drawdown</p>
@@ -148,7 +152,7 @@ export function GrowthCalculator() {
                         className="lg:col-span-7 space-y-8"
                     >
                         {/* Account Growth Example Card */}
-                        <div className="bg-white rounded-[2.5rem] border border-slate-200 shadow-xl shadow-slate-200/50 p-10">
+                        <div className="bg-[#fcfcfc] rounded-[2.5rem] border-2 border-slate-200/60 shadow-[0_32px_64px_-16px_rgba(37,99,235,0.08)] p-10">
                             <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-12">
                                 <div className="max-w-md">
                                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Account Growth Example</h3>
@@ -181,82 +185,101 @@ export function GrowthCalculator() {
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="p-8 rounded-3xl bg-blue-50/50 border border-blue-100">
-                                    <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-3">Total Profit</p>
-                                    <p className="text-4xl font-bold text-slate-900">${totalProfit.toLocaleString()}</p>
-                                    <p className="text-emerald-500 text-sm font-bold mt-2">+88.55% Return</p>
+                                <div className="p-8 rounded-[2.5rem] bg-blue-50/40 border-2 border-blue-100 shadow-sm relative overflow-hidden group">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-blue-600/10 transition-colors" />
+                                    <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-4">Total Profit</p>
+                                    <p className="text-4xl font-bold text-slate-900 mb-3">${totalProfit.toLocaleString()}</p>
+                                    <p className="text-emerald-600 text-sm font-bold flex items-center gap-1">
+                                        <TrendingUp className="w-4 h-4" />
+                                        +{totalROI}% Compounded
+                                    </p>
                                 </div>
-                                <div className="p-8 rounded-3xl bg-emerald-50/30 border border-emerald-100">
-                                    <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-3">Final Balance</p>
-                                    <p className="text-4xl font-bold text-slate-900">${finalBalance.toLocaleString()}</p>
-                                    <p className="text-slate-500 text-sm mt-2">After 12 Months</p>
+                                <div className="p-8 rounded-[2.5rem] bg-emerald-50/30 border-2 border-emerald-100 shadow-sm relative overflow-hidden group">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-600/5 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-emerald-600/10 transition-colors" />
+                                    <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-4">Final Balance</p>
+                                    <p className="text-4xl font-bold text-slate-900 mb-3">${finalBalance.toLocaleString()}</p>
+                                    <p className="text-slate-500 text-sm font-medium">After 12 Months (2025)</p>
                                 </div>
                             </div>
                         </div>
 
                         {/* Performance Chart */}
-                        <div className="bg-white rounded-[2.5rem] border border-slate-200 shadow-xl shadow-slate-200/50 p-10 h-[450px]">
-                            <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-12 flex items-center gap-3">
-                                <TrendingUp className="w-5 h-5 text-blue-500" />
-                                Monthly Compounded Growth
-                            </h4>
-                            <div className="h-[280px]">
+                        <div className="bg-[#fcfcfc] rounded-[2.5rem] border-2 border-slate-200/60 shadow-[0_32px_64px_-16px_rgba(37,99,235,0.12)] p-6 md:p-10 h-auto min-h-[500px]">
+                            {/* Chart Header - Matching Image */}
+                            <div className="flex items-center justify-between mb-12 border-b border-slate-200 pb-6">
+                                <h4 className="text-lg md:text-xl font-bold text-slate-700">2025 Verified Monthly Performance</h4>
+                                <div className="flex items-center bg-transparent">
+                                    <div className="px-5 py-2.5 bg-white text-slate-900 border border-slate-200 font-bold rounded-lg shadow-sm">
+                                        2025
+                                    </div>
+                                    <div className="ml-4 opacity-40">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-slate-600">
+                                            <line x1="4" y1="21" x2="4" y2="14" /><line x1="4" y1="10" x2="4" y2="3" /><line x1="12" y1="21" x2="12" y2="12" /><line x1="12" y1="8" x2="12" y2="3" /><line x1="20" y1="21" x2="20" y2="16" /><line x1="20" y1="12" x2="20" y2="3" /><line x1="1" y1="14" x2="7" y2="14" /><line x1="9" y1="8" x2="15" y2="8" /><line x1="17" y1="16" x2="23" y2="16" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="text-center mb-8">
+                                <h5 className="text-[14px] font-bold text-slate-700">Monthly Gain(Change)</h5>
+                            </div>
+
+                            <div className="h-[320px] relative">
                                 <ResponsiveContainer width="100%" height="100%">
-                                    <BarChart data={chartData} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
+                                    <BarChart data={MONTHLY_DATA} margin={{ top: 20, right: 0, left: -25, bottom: 40 }}>
                                         <defs>
                                             <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
                                                 <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.9} />
-                                                <stop offset="100%" stopColor="#2563eb" stopOpacity={0.6} />
-                                            </linearGradient>
-                                            <linearGradient id="barGradientHigh" x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="0%" stopColor="#10b981" stopOpacity={0.9} />
-                                                <stop offset="100%" stopColor="#059669" stopOpacity={0.6} />
+                                                <stop offset="100%" stopColor="#10b981" stopOpacity={0.8} />
                                             </linearGradient>
                                         </defs>
-                                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f8fafc" />
+                                        <CartesianGrid strokeDasharray="0" vertical={false} stroke="#e2e8f0" />
                                         <XAxis
                                             dataKey="name"
                                             axisLine={false}
                                             tickLine={false}
-                                            tick={{ fill: '#cbd5e1', fontSize: 11, fontWeight: 600 }}
-                                            dy={15}
+                                            tick={{ fill: '#64748b', fontSize: 11, fontWeight: 500 }}
+                                            angle={-45}
+                                            textAnchor="end"
+                                            dy={10}
                                         />
                                         <YAxis
                                             axisLine={false}
                                             tickLine={false}
-                                            tick={{ fill: '#cbd5e1', fontSize: 11, fontWeight: 600 }}
-                                            tickFormatter={(value) => `$${value > 1000 ? (value / 1000).toFixed(1) + 'k' : value}`}
+                                            domain={[0, 15]}
+                                            ticks={[0, 5, 10, 15]}
+                                            tick={{ fill: '#94a3b8', fontSize: 11 }}
+                                            tickFormatter={(value) => `${value}%`}
                                         />
                                         <Tooltip
-                                            cursor={{ fill: '#f1f5f9', radius: 8 }}
+                                            cursor={{ fill: 'rgba(37, 99, 235, 0.05)', radius: 8 }}
                                             content={({ active, payload, label }) => {
                                                 if (active && payload && payload.length) {
                                                     return (
-                                                        <div className="bg-white border border-slate-100 p-6 rounded-3xl shadow-2xl shadow-slate-200/50 min-w-[200px]">
-                                                            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-4">{label} PERFORMANCE</p>
-                                                            <div className="space-y-3">
-                                                                <div className="flex justify-between items-center bg-slate-50/50 p-3 rounded-xl border border-slate-100">
-                                                                    <span className="text-slate-500 text-sm">Return:</span>
-                                                                    <span className="text-emerald-500 font-bold">+{payload[0].payload.return}%</span>
-                                                                </div>
-                                                                <div className="flex justify-between items-center bg-slate-50/50 p-3 rounded-xl border border-slate-100">
-                                                                    <span className="text-slate-500 text-sm">Balance:</span>
-                                                                    <span className="text-slate-900 font-bold">${payload[0].value.toLocaleString()}</span>
-                                                                </div>
-                                                            </div>
+                                                        <div className="bg-white border-2 border-blue-500/20 px-4 py-2 rounded-xl shadow-lg relative">
+                                                            <p className="text-slate-700 font-bold text-sm">
+                                                                {label}
+                                                            </p>
+                                                            <p className="text-blue-600 font-black text-lg">
+                                                                {payload[0].value}%
+                                                            </p>
+                                                            {/* Tooltip triangle tail */}
+                                                            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-r-2 border-b-2 border-blue-500/20 rotate-45" />
                                                         </div>
                                                     );
                                                 }
                                                 return null;
                                             }}
                                         />
-                                        <Bar dataKey="balance" radius={[6, 6, 0, 0]} barSize={40}>
-                                            {chartData.map((entry, index) => (
-                                                <Cell
-                                                    key={`cell-${index}`}
-                                                    fill={entry.return > 10 ? 'url(#barGradientHigh)' : 'url(#barGradient)'}
-                                                />
-                                            ))}
+                                        <Bar dataKey="return" fill="url(#barGradient)" radius={[4, 4, 0, 0]} barSize={35}>
+                                            {/* Labels on top of bars */}
+                                            <LabelList
+                                                dataKey="return"
+                                                position="top"
+                                                formatter={(val) => `${val}%`}
+                                                style={{ fill: '#1e293b', fontSize: '11px', fontWeight: '800' }}
+                                                offset={10}
+                                            />
                                         </Bar>
                                     </BarChart>
                                 </ResponsiveContainer>

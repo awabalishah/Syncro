@@ -32,7 +32,7 @@ export function Features() {
                             </h2>
 
                             <p className="text-blue-100 text-lg md:text-xl font-medium mb-10 leading-relaxed">
-                                Experience the future of automated trading. Syncro combines advanced algorithms with strict risk management to deliver consistent, long-term growth.
+                                Experience the future of automated trading. Syncro provides a seamless connection to an advanced trading system that combines algorithmic execution with strict risk management, designed to support consistent, long-term performance.
                             </p>
 
                             <Link
@@ -45,30 +45,33 @@ export function Features() {
                         </div>
 
                         <div className="hidden lg:block relative">
-                            <motion.div
-                                animate={{
-                                    y: [0, -15, 0],
-                                }}
-                                transition={{
-                                    duration: 6,
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
-                                }}
-                                className="relative z-10"
-                            >
-                                <div className="w-80 h-80 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/30 flex items-center justify-center p-8 shadow-2xl">
-                                    <div className="text-center">
-                                        <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                                            <Zap className="w-10 h-10 text-blue-600" />
-                                        </div>
-                                        <div className="space-y-3">
-                                            <div className="h-2 w-32 bg-white/20 rounded-full mx-auto" />
-                                            <div className="h-2 w-24 bg-white/10 rounded-full mx-auto" />
-                                            <div className="h-2 w-28 bg-white/15 rounded-full mx-auto" />
+                            <Link to="/features">
+                                <motion.div
+                                    animate={{
+                                        y: [0, -15, 0],
+                                    }}
+                                    transition={{
+                                        duration: 6,
+                                        repeat: Infinity,
+                                        ease: "easeInOut"
+                                    }}
+                                    whileHover={{ scale: 1.05 }}
+                                    className="relative z-10 cursor-pointer"
+                                >
+                                    <div className="w-80 h-80 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/30 flex items-center justify-center p-8 shadow-2xl border-beam">
+                                        <div className="text-center relative z-10">
+                                            <div className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl">
+                                                <Zap className="w-12 h-12 text-blue-600" />
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="h-2 w-32 bg-white/20 rounded-full mx-auto" />
+                                                <div className="h-2 w-24 bg-white/10 rounded-full mx-auto" />
+                                                <div className="h-2 w-28 bg-white/15 rounded-full mx-auto" />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </motion.div>
+                                </motion.div>
+                            </Link>
 
                             {/* Decorative blur underlying the floating card */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-400/30 rounded-full blur-[80px]" />

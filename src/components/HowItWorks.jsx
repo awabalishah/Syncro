@@ -24,8 +24,8 @@ export function HowItWorks() {
         },
         {
             num: "02",
-            title: "Connect to Platform",
-            desc: "You log in to MetaTrader 5 using broker details. No technical setup needed.",
+            title: "Connect to MT5 Platform",
+            desc: "Download the MT5 app and log in using the details provided by your broker. No technical setup is required, and full step-by-step instructions are available in our Discord server.",
             icon: <Link2 className="w-8 h-8 text-indigo-600" />,
             span: "md:col-span-1",
             color: "bg-indigo-50"
@@ -33,7 +33,7 @@ export function HowItWorks() {
         {
             num: "03",
             title: "Connect Through Syncro",
-            desc: "Follow a straightforward connection process to link your account to the bot. Support is available in our Discord.",
+            desc: "Follow a straightforward connection process to link your account to the bot. Full instructions and support are available in our Discord.",
             icon: <Bot className="w-8 h-8 text-purple-600" />,
             span: "md:col-span-1",
             color: "bg-purple-50"
@@ -49,7 +49,7 @@ export function HowItWorks() {
         {
             num: "05",
             title: "Monitor Anytime",
-            desc: "Check performance anytime through MT5 or our live, independently verified link. Everything is transparent and real-time.",
+            desc: "Check performance anytime through your MT5 app or our live, independently verified link. Everything is transparent and real-time.",
             icon: <BarChart3 className="w-8 h-8 text-cyan-600" />,
             span: "md:col-span-1",
             color: "bg-cyan-50",

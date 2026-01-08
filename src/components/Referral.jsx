@@ -84,12 +84,12 @@ export function Referral() {
                                 <h3 className="text-2xl md:text-3xl font-bold text-white">Ready to start earning?</h3>
                             </div>
                             <a
-                                href="https://form.typeform.com/to/d75elwPl"
+                                href="https://discord.gg/4JWUAKPB"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-white text-blue-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105"
                             >
-                                Join our Waitlist
+                                Request Access
                                 <ArrowRight className="w-5 h-5" />
                             </a>
                         </div>

@@ -95,10 +95,10 @@ export function FeaturesPage() {
                     className="text-center mb-20"
                 >
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 text-slate-900">
-                        Powerful <span className="text-blue-600">Features</span> for Professional Traders
+                        Powerful <span className="text-blue-600">Features</span> for People Focused on <span className="text-blue-600">Growing Wealth</span>
                     </h1>
                     <p className="text-slate-600 max-w-2xl mx-auto text-xl font-medium">
-                        Syncro is engineered with advanced automation and strict risk management to deliver consistent performance.
+                        Syncro is engineered to seamlessly connect users to an automated trading system that operates with advanced algorithms and strict risk management.
                     </p>
                 </motion.div>
 
@@ -110,25 +110,25 @@ export function FeaturesPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.08 }}
-                            className="group bg-slate-50 p-10 rounded-[2.5rem] border border-slate-200/60 hover:bg-white hover:border-blue-200 hover:shadow-2xl transition-all duration-500"
+                            className="group bg-slate-900 p-10 rounded-[2.5rem] border border-slate-700 hover:bg-slate-800 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500"
                         >
-                            <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center mb-6 shadow-sm border border-slate-100 group-hover:scale-105 transition-all duration-300">
+                            <div className="w-16 h-16 rounded-2xl bg-slate-800 flex items-center justify-center mb-6 shadow-sm border border-slate-700 group-hover:scale-105 transition-all duration-300">
                                 {feature.icon}
                             </div>
 
-                            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
                                 {feature.title}
                             </h3>
 
-                            <p className="text-slate-600 leading-relaxed text-base mb-6">
+                            <p className="text-slate-300 leading-relaxed text-base mb-6">
                                 {feature.description}
                             </p>
 
                             {feature.list && (
-                                <ul className="space-y-3 mt-auto pt-6 border-t border-slate-200/60">
+                                <ul className="space-y-3 mt-auto pt-6 border-t border-slate-700">
                                     {feature.list.map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                                            <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0" />
+                                        <li key={i} className="flex items-start gap-3 text-sm text-slate-300 font-medium">
+                                            <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
                                             <span>{item}</span>
                                         </li>
                                     ))}
