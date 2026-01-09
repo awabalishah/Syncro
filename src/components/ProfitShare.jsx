@@ -12,7 +12,7 @@ export function ProfitShare() {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Profit Share & Transparency</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Profit Share & <span className="text-blue-600">Transparency</span></h2>
                     <h3 className="text-xl text-blue-400 font-bold mb-8 text-center uppercase tracking-widest">Clear. Fair. Performance Based</h3>
                     <p className="text-slate-300 text-lg leading-relaxed">
                         If your account doesn’t grow in a given month, you pay nothing.
@@ -25,21 +25,28 @@ export function ProfitShare() {
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white/[0.03] backdrop-blur-sm p-12 rounded-[3rem] border border-white/10 shadow-2xl flex flex-col justify-center"
+                        className="bg-white/[0.03] backdrop-blur-sm p-12 rounded-[3rem] border border-white/10 shadow-2xl flex flex-col h-full"
                     >
-                        <h4 className="text-2xl font-bold text-white mb-12 decoration-blue-500/30 underline-offset-8">Our Commitment</h4>
+                        <h3 className="text-2xl font-bold mb-10 text-white">Our Commitment</h3>
                         <ul className="space-y-10">
                             {[
                                 "No monthly subscriptions",
                                 "Zero charges on your initial deposit",
                                 "Fees only apply to new net profits",
-                                "High-water mark protection included"
+                                "New-Profit-Only Fee Protection"
                             ].map((item, i) => (
-                                <li key={i} className="flex gap-5 items-center text-slate-200 text-lg">
+                                <li key={i} className="flex gap-5 items-center text-slate-200 text-xl">
                                     <div className="w-8 h-8 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 border border-blue-500/20">
                                         <div className="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
                                     </div>
-                                    <span className="font-medium">{item}</span>
+                                    <span className="font-medium">
+                                        {item}
+                                        {item === "New-Profit-Only Fee Protection" && (
+                                            <span className="block text-sm text-slate-400 font-normal italic mt-1">
+                                                (Performance fees are only charged on new profits, and the profit level resets after each fee is paid.)
+                                            </span>
+                                        )}
+                                    </span>
                                 </li>
                             ))}
                         </ul>

@@ -34,16 +34,16 @@ const TESTIMONIALS = [
 
 export function SuccessStories() {
     return (
-        <section id="testimonials" className="py-24 bg-white relative overflow-hidden">
+        <section id="testimonials" className="py-24 bg-slate-900 relative overflow-hidden">
             {/* Background Decor */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30" />
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mt-4 text-slate-900 mb-6">
-                        What our clients say
+                    <h2 className="text-3xl md:text-5xl font-bold mt-4 text-white mb-6">
+                        What Our <span className="text-blue-600">Clients Say</span>
                     </h2>
-                    <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-slate-300 text-lg max-w-2xl mx-auto">
                         Real experiences from people using Syncro for hands-off access to automated trading.
                     </p>
                 </div>

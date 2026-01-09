@@ -28,17 +28,13 @@ const faqCategories = [
             {
                 q: "Where can I view live statistics and historical performance?",
                 a: <div className="flex flex-col gap-2">
-                    <p>You can view live statistics, historical performance, and trading behaviour using our public tracking link on:</p>
-                    <img src={myfxbookLogo} alt="Myfxbook" className="h-6 w-auto grayscale opacity-70" />
-                    <p>This allows you to review long-term performance, drawdowns, trade frequency, and typical trading times.</p>
+                    <p>Live performance and profits can be tracked in real time via your MT5 app. Our public <span className="font-semibold text-slate-900">Myfxbook</span> tracking link provides full transparency on historical profits, drawdowns, trade frequency, and typical trading times.</p>
                 </div>
             },
             {
                 q: "Has the bot performed consistently?",
                 a: <div className="flex flex-col gap-2">
-                    <p>Based on the live data verified by:</p>
-                    <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto grayscale opacity-70" />
-                    <p>The bot has shown consistent gains since June 2024. Past performance is not a guarantee of future results.</p>
+                    <p>Based on live, independently verified data via <span className="font-semibold text-slate-900">Myfxbook</span>, the bot has demonstrated consistent monthly performance since June 2024, delivering an average return of 7.8% per month throughout 2025. Past performance is not a guarantee of future results.</p>
                 </div>
             }
         ]
@@ -50,11 +46,13 @@ const faqCategories = [
         questions: [
             {
                 q: "How long does it take to get access to the trading bot?",
-                a: "Once all required steps are completed, bot access typically takes between 1–3 business working days. This timeframe relates to activating and connecting the bot, not your broker. You will be personally notified via a legitimate support ticket once your account is successfully connected."
+                a: "Once all required steps are completed, bot access typically takes 1–2 business days. This timeframe relates solely to the activation and connection of the bot and does not involve your broker. You will be personally notified via a legitimate support ticket once your account has been successfully connected."
             },
             {
                 q: "I’ve submitted everything — when will I be confirmed?",
-                a: "Please allow up to 1–3 business working days for the team to review your submission and complete the bot connection. If anything is missing, the team will contact you via your support ticket."
+                a: <div className="flex flex-col gap-2">
+                    <p>Please allow up to 1–2 business days for the team to review your submission and complete the bot connection. If any information is missing, the team will contact you via your support ticket within our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>.</p>
+                </div>
             }
         ]
     },
@@ -65,19 +63,27 @@ const faqCategories = [
         questions: [
             {
                 q: "Which broker do I need to use?",
-                a: "Syncro works exclusively with Vantage. You must open your Vantage trading account using the official Syncro affiliate link provided during onboarding."
+                a: <div className="flex flex-col gap-2">
+                    <p>Syncro works with the following supported brokers: Vantage, VT Markets, Axi Trader, Bullwaves, PU Prime, StarTrader, and KudoTrade. Trading accounts must be opened using the official affiliate links provided in our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a> during onboarding.</p>
+                </div>
             },
             {
-                q: "What happens if I open a Vantage account without the affiliate link?",
-                a: "If a broker account is created without using the correct affiliate link, the system will not work. This means the account cannot be linked, bot access cannot be enabled, and support cannot activate the system. Accounts opened outside the official link cannot be fixed or transferred."
+                q: "What happens if I open a trading account with a supported broker without using the official affiliate link?",
+                a: <div className="flex flex-col gap-2">
+                    <p>If a broker account is created without using the correct affiliate link, the system will not work. This means the account cannot be linked, bot access cannot be enabled, and support cannot activate the system. Accounts opened outside the official link inside our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a> cannot be fixed or transferred.</p>
+                </div>
             },
             {
-                q: "I already have a Vantage account — can I use it?",
-                a: "No. Existing Vantage accounts cannot be used unless they were created through the correct affiliate link. A new account must be opened using the provided link."
+                q: "I already have a trading account with one of the supported brokers — can I use it?",
+                a: <div className="flex flex-col gap-2">
+                    <p>No. A new trading account must be created using the official affiliate links provided in our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>, or alternatively a different supported broker must be used via the official affiliate links. Existing accounts cannot be connected.</p>
+                </div>
             },
             {
                 q: "What leverage do I need?",
-                a: "A leverage of 1:30 is not sufficient. The bot may open multiple positions and requires higher leverage to function correctly. Required leverage: 1:300 to 1:500."
+                a: <div className="flex flex-col gap-2">
+                    <p>Required leverage: 1:300–1:500. Lower leverage levels, including 1:30, are not sufficient for the bot to operate correctly, as it may open multiple positions. Within our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>, we provide clear guidelines on which supported broker to open an account with based on your location to ensure the required leverage is available.</p>
+                </div>
             }
         ]
     },
@@ -88,15 +94,15 @@ const faqCategories = [
         questions: [
             {
                 q: "What does the bot trade?",
-                a: "The bot is specifically designed and optimised for XAUUSD (Gold). Trading other instruments is not supported unless officially confirmed."
+                a: "The bot is specifically designed and optimised to trade XAUUSD (Gold). Trading other instruments is not supported unless officially confirmed."
             },
             {
                 q: "How often does the bot trade?",
-                a: "On average, the bot trades 2–4 times per week, typically from Monday to Thursday. Fridays are avoided to maintain a safer trading environment."
+                a: "On average, the bot executes 2–4 trades per week, typically between Monday and Thursday. Some weeks may see fewer trades — including as little as one trade or no trades at all — while other weeks may see more, depending on market conditions. Trade frequency is entirely market-condition dependent, with capital protection as the first priority and account growth as the second. Fridays are avoided to maintain a safer trading environment."
             },
             {
                 q: "How long do trades usually last?",
-                a: "Trades are generally short, with an average duration of around 5 minutes."
+                a: "Trades are typically short and usually last only a few minutes. This approach helps reduce risk by limiting exposure to sudden market movements and unnecessary volatility."
             }
         ]
     },
@@ -106,27 +112,35 @@ const faqCategories = [
         icon: <AlertTriangle className="w-5 h-5" />,
         questions: [
             {
-                q: "How should I think about the bot’s risk setting?",
-                a: "Think of it like an investor allocating money to a hedge fund. Some investors prefer lower risk, others accept higher risk for higher potential returns. The bot works in a similar way, allowing you to choose the risk exposure you're comfortable with."
+                q: "How should I think about the level of risk the bot takes with my capital?",
+                a: <div className="flex flex-col gap-3">
+                    <p>Think of it like choosing how much risk you're comfortable with when investing in a fund. Some investors prefer a lower-risk approach with steadier returns, while others are comfortable taking on more risk in exchange for higher potential returns. The bot works in a similar way — you choose the level of risk that suits you, and the bot trades within those limits.</p>
+                    <p>Instructions on how to adjust your risk settings are provided within our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord community</a>; however, we strongly recommend keeping the default settings, as all past independently verified performance is based on the built-in risk configuration.</p>
+                </div>
             },
             {
                 q: "What risk level does the bot use by default?",
-                a: <div className="flex flex-col gap-2">
-                    <p>The bot operates at a 30% risk level by default. This is the exact risk setting used for the verified 18+ months of live results shown on our official tracking link on:</p>
-                    <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto grayscale opacity-70" />
+                a: <div className="flex flex-col gap-3">
+                    <p>The bot operates at a 30% risk setting by default. This does not mean 30% of your account is risked on a single trade. Instead, it is a relative risk setting that controls position sizing and overall exposure within the bot's built-in risk management framework.</p>
+                    <p>This default setting has been used consistently for 18+ months of live, independently verified performance, as shown on our official <span className="font-semibold text-slate-900">Myfxbook</span> tracking link. Over this period, the bot has delivered positive account growth every month, while maintaining a clear focus on capital protection first and account growth second.</p>
                 </div>
             },
             {
                 q: "Does the bot risk 30% on every trade?",
-                a: "No. The 30% figure is not risk per trade, but the maximum total risk framework (equity stop) the bot is allowed to operate within. If this limit is reached, trading stops automatically."
+                a: "No. The 30% figure is not a per-trade risk. It represents the maximum overall risk framework (equity stop) the bot is allowed to operate within. If this limit is ever reached, trading automatically stops, protecting the account from further losses."
             },
             {
                 q: "Can I change the risk level?",
-                a: "Yes, you can change the risk level. Lowering risk may reduce drawdowns but also reduce returns, while increasing risk may increase potential returns but also increase exposure and drawdown."
+                a: <div className="flex flex-col gap-3">
+                    <p>Yes. As explained above, the risk level controls how actively the bot trades within its overall risk framework. You can adjust this setting if you wish — lowering the risk may reduce drawdowns but can also reduce potential returns, while increasing the risk may increase potential returns but also increases exposure and drawdown.</p>
+                    <p>That said, we strongly recommend keeping the default risk setting, as all live, independently verified performance has been achieved using the built-in configuration.</p>
+                </div>
             },
             {
                 q: "How do I change the risk if I choose to?",
-                a: "A step-by-step video tutorial is available explaining how to adjust risk settings. Please watch the video carefully before making any changes."
+                a: <div className="flex flex-col gap-2">
+                    <p>A step-by-step video tutorial is available inside our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a> showing exactly how to adjust your risk settings. Please watch the video carefully in full before making any changes.</p>
+                </div>
             }
         ]
     },
@@ -137,22 +151,40 @@ const faqCategories = [
         questions: [
             {
                 q: "How do I view my performance?",
-                a: "You can view your performance directly through your MT5 app, where you can monitor Balance, Equity, and open/closed trades."
-            },
-            {
-                q: "I’m on MT4/MT5 and can’t place a trade on EURUSD — what should I do?",
-                a: "Use the RAW spread version of the pair, often labelled EURUSD+, EURUSD.pro, or EURUSD.ECN. Search for the correct symbol in your platform."
+                a: <div className="flex flex-col gap-3">
+                    <p>You can view your performance directly through your MT5 app, where you can monitor your balance, equity, open and closed trades in real time.</p>
+                    <p>In addition, performance can be tracked through our public <span className="font-semibold text-slate-900">Myfxbook</span> tracking link, which provides transparent visibility of historical returns, drawdowns, trade frequency, and typical trading times. Together, these tools allow you to monitor both short-term activity and long-term performance.</p>
+                </div>
             }
         ]
     },
     {
-        id: 'affiliates',
-        title: 'Affiliates & Additional Accounts',
+        id: 'additional',
+        title: 'Additional Accounts',
         icon: <Users className="w-5 h-5" />,
         questions: [
             {
-                q: "Can I add additional personal accounts later?",
-                a: "Yes, using external trade copiers such as MetaCopier. Note that Syncro does not provide support for external copier setups."
+                q: "Can I add personal accounts after my account with one of your supported brokers is activated?",
+                a: <div className="flex flex-col gap-3">
+                    <p>Yes. You may add personal accounts using MetaCopier or any other external trade copier.</p>
+                    <p>Please note that our team does not provide support for setting up or managing external copiers. For assistance, you must contact the relevant platform’s official support team via their live chat or support system.</p>
+                </div>
+            }
+        ]
+    },
+    {
+        id: 'rewards',
+        title: 'Affiliate Reward Program',
+        icon: <Zap className="w-5 h-5" />,
+        questions: [
+            {
+                q: "How does the Affiliate Reward Programme work?",
+                a: <div className="flex flex-col gap-3">
+                    <p>The Affiliate Reward Programme is Level 1 only — this is not a multi-level marketing scheme.</p>
+                    <p>For every person you personally refer to the Syncro system, you receive 20% of Syncro’s performance fee generated from that specific client’s account, only when the account is in profit.</p>
+                    <p>To be clear, this is not 20% of the referred client’s trading profits. It is 20% of the performance fee charged by Syncro.</p>
+                    <p>This programme is simply a thank you for introducing others to the Syncro ecosystem and provides an opportunity to earn a secondary passive income stream alongside your own trading results.</p>
+                </div>
             }
         ]
     },
@@ -163,11 +195,16 @@ const faqCategories = [
         questions: [
             {
                 q: "Will Syncro ever message me directly?",
-                a: "No. Syncro will never send unsolicited direct messages. All official communication is handled through legitimate support tickets."
+                a: <div className="flex flex-col gap-3">
+                    <p>No. Syncro will never send unsolicited direct messages. All official communication is handled exclusively through legitimate support tickets inside our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>.</p>
+                    <p>We do not communicate via direct messages in order to protect our community from impersonation attempts and scams. If you require support or need to contact the team, this must always be done through the support ticket system in our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>.</p>
+                </div>
             },
             {
                 q: "How do I get help if I need it?",
-                a: "Open a support ticket in #support. A team member will assist you privately, securely, and professionally."
+                a: <div className="flex flex-col gap-2">
+                    <p>Open a support ticket in the dedicated support channel within our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>. A team member will assist you privately, securely, and professionally through the ticket system.</p>
+                </div>
             }
         ]
     }
@@ -255,7 +292,7 @@ export function FAQ() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100"
+                        className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl shadow-blue-600/10 border-2 border-blue-200 hover:border-blue-400 transition-all duration-300"
                     >
                         {currentQuestions.map((item, idx) => (
                             <FAQItem

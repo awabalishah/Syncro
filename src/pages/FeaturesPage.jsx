@@ -29,12 +29,12 @@ export function FeaturesPage() {
         {
             icon: <Target className="w-8 h-8 text-indigo-600" />,
             title: "Trades Only When Conditions Are Right",
-            description: "Syncro does not trade every day. Some days are active, others are quiet. This is intentional. Trades are only placed when conditions align, helping reduce unnecessary risk during uncertain markets."
+            description: "The bot does not trade every day. Some days are active, others are quiet. This is intentional. Trades are only placed when conditions align, helping reduce unnecessary risk during uncertain markets."
         },
         {
             icon: <TrendingUp className="w-8 h-8 text-emerald-600" />,
             title: "Results Vary With Market Conditions",
-            description: "Some periods may feel more active, while others may feel very quiet. This is normal. Syncro adjusts how it operates based on market conditions to help protect accounts during uncertain or unstable phases. The focus isn’t constant activity — it’s steady, disciplined performance over time."
+            description: "Some periods may feel more active, while others may feel very quiet. This is normal. The bot adjusts how it operates based on market conditions to help protect accounts during uncertain or unstable phases. The focus isn't constant activity — it's steady, disciplined performance over time."
         },
         {
             icon: <ShieldAlert className="w-8 h-8 text-orange-600" />,
@@ -44,7 +44,7 @@ export function FeaturesPage() {
         {
             icon: <ShieldCheck className="w-8 h-8 text-red-600" />,
             title: "Built-In Risk Controls",
-            description: "Syncro is designed with safety and consistency in mind, not high-risk trading.",
+            description: "The bot is designed with safety and consistency in mind, not high-risk trading.",
             list: [
                 "No aggressive leverage",
                 "No martingale behaviour",
@@ -64,7 +64,7 @@ export function FeaturesPage() {
         {
             icon: <Clock className="w-8 h-8 text-purple-600" />,
             title: "Fully Automated, No Daily Effort",
-            description: "Once connected, Syncro runs automatically in the background. There’s no need to manage trades or make adjustments — you can simply check in whenever you like."
+            description: "Once connected to the Syncro the bot runs automatically in the background. There's no need to manage trades or make adjustments — you can simply check in whenever you like."
         }
     ];
 
@@ -72,17 +72,17 @@ export function FeaturesPage() {
         {
             icon: <CloudRain className="w-8 h-8 text-slate-600" />,
             title: "Market Conditions Not Suitable",
-            description: "If markets are too volatile or unclear, Syncro stays on the sidelines. The first priority is protecting your balance — growth comes second."
+            description: "If markets are too volatile or unclear, the bot stays on the sidelines. The first priority is protecting your balance — growth comes second."
         },
         {
             icon: <CheckCircle2 className="w-8 h-8 text-blue-500" />,
             title: "Entry Conditions Not Fully Met",
-            description: "Even if markets appear active, Syncro will only trade when all system checks align. There is no guessing or rushing."
+            description: "Even if markets appear active, the bot will only trade when all system checks align. There is no guessing or rushing."
         },
         {
             icon: <AlertTriangle className="w-8 h-8 text-yellow-600" />,
             title: "Market Events & Uncertainty",
-            description: "During major news events or uncertain periods, Syncro may pause trading to help protect your account balance."
+            description: "During major news events or uncertain periods, the bot may pause trading to help protect your account balance."
         }
     ];
 
@@ -110,7 +110,7 @@ export function FeaturesPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.08 }}
-                            className="group bg-slate-900 p-10 rounded-[2.5rem] border border-slate-700 hover:bg-slate-800 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500"
+                            className="group bg-slate-900 p-10 rounded-[2.5rem] border border-slate-700 hover:bg-slate-800 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 border-beam"
                         >
                             <div className="w-16 h-16 rounded-2xl bg-slate-800 flex items-center justify-center mb-6 shadow-sm border border-slate-700 group-hover:scale-105 transition-all duration-300">
                                 {feature.icon}
@@ -138,14 +138,14 @@ export function FeaturesPage() {
                     ))}
                 </div>
 
-                <div className="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-white overflow-hidden relative">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] -mr-48 -mt-48" />
+                <div className="bg-white rounded-[3rem] p-12 md:p-20 overflow-hidden relative border border-slate-200 shadow-xl">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/50 rounded-full blur-[120px] -mr-48 -mt-48" />
 
                     <div className="relative z-10">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold mb-6">Disciplined Trading Philosophy</h2>
-                            <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-                                Syncro only trades when conditions are right. Here's why the system might stay on the sidelines.
+                            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">The <span className="text-blue-600">Bot</span> only Trades when <span className="text-blue-600">Conditions are Right!</span></h2>
+                            <p className="text-slate-600 max-w-2xl mx-auto text-xl">
+                                Here's why the system might stay on the sidelines.
                             </p>
                         </div>
 
@@ -156,17 +156,34 @@ export function FeaturesPage() {
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
-                                    className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl"
+                                    className="bg-slate-50 border border-slate-200 p-8 rounded-3xl hover:shadow-lg hover:border-blue-300 transition-all duration-300 border-beam"
                                 >
-                                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                                    <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-6">
                                         {reason.icon}
                                     </div>
-                                    <h3 className="text-xl font-bold mb-4">{reason.title}</h3>
-                                    <p className="text-slate-400 text-sm leading-relaxed">
+                                    <h3 className="text-xl font-bold mb-4 text-slate-900">{reason.title}</h3>
+                                    <p className="text-slate-600 text-sm leading-relaxed">
                                         {reason.description}
                                     </p>
                                 </motion.div>
                             ))}
+                        </div>
+
+                        {/* CTA Button */}
+                        <div className="flex justify-center mt-16">
+                            <motion.a
+                                href="https://discord.gg/4JWUAKPB"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="bg-blue-600 text-white px-10 py-5 rounded-full font-bold text-lg shadow-2xl hover:bg-blue-700 transition-all duration-300 border-beam inline-flex items-center gap-3"
+                            >
+                                Request Access
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </motion.a>
                         </div>
                     </div>
                 </div>

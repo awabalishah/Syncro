@@ -18,7 +18,7 @@ export function Referral() {
         {
             icon: <ShieldCheck className="w-6 h-6" />,
             title: "Performance Based",
-            description: "Rewards are based on actual performance fees paid, not just sign-ups, ensuring quality."
+            description: "Rewards are based on actual performance fees earned, not simply on sign-ups, ensuring quality and long-term consistency."
         },
         {
             icon: <Users className="w-6 h-6" />,
@@ -36,12 +36,12 @@ export function Referral() {
                     viewport={{ once: true }}
                     className="max-w-6xl mx-auto text-center"
                 >
-                    <div className="inline-block p-3 rounded-full bg-blue-100 text-blue-600 mb-6">
-                        <Gift className="w-6 h-6" />
+                    <div className="inline-block p-6 rounded-full bg-blue-100 text-blue-600 mb-6">
+                        <Gift className="w-12 h-12" />
                     </div>
 
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900 leading-tight">
-                        A simple thank-you for <br /> genuine introductions
+                        A Simple <span className="text-blue-600">Thank-You</span> For <br /> Genuine <span className="text-blue-600">Introductions</span>
                     </h2>
                     <p className="text-lg text-slate-600 mb-16 max-w-2xl mx-auto">
                         Syncro offers an optional referral reward for clients who introduce others to the service.
@@ -61,21 +61,25 @@ export function Referral() {
                                     rotateX: 5,
                                     transition: { duration: 0.3 }
                                 }}
-                                className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/50 text-left perspective-1000"
+                                className="bg-slate-900 p-8 rounded-[2rem] border border-slate-700 shadow-xl shadow-slate-900/50 text-left perspective-1000 group hover:border-blue-500/50 transition-colors duration-300"
                                 style={{ transformStyle: 'preserve-3d' }}
                             >
-                                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6" style={{ transform: 'translateZ(20px)' }}>
+                                <div className="w-12 h-12 rounded-2xl bg-slate-800 text-blue-400 flex items-center justify-center mb-6 group-hover:bg-blue-500/10 group-hover:text-blue-300 transition-colors duration-300" style={{ transform: 'translateZ(20px)' }}>
                                     {reward.icon}
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-3" style={{ transform: 'translateZ(10px)' }}>{reward.title}</h3>
-                                <p className="text-slate-600 text-sm leading-relaxed" style={{ transform: 'translateZ(5px)' }}>
+                                <h3 className="text-xl font-bold text-white mb-3" style={{ transform: 'translateZ(10px)' }}>{reward.title}</h3>
+                                <p className="text-slate-400 text-sm leading-relaxed" style={{ transform: 'translateZ(5px)' }}>
                                     {reward.description}
                                 </p>
                             </motion.div>
                         ))}
                     </div>
 
-                    <div className="bg-blue-600 rounded-[3rem] p-12 text-white relative overflow-hidden shadow-2xl shadow-blue-600/30 mb-20">
+                    <motion.div
+                        animate={{ scale: [1, 1.02, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        className="bg-blue-600 rounded-[3rem] p-12 text-white relative overflow-hidden shadow-2xl shadow-blue-600/30 mb-20"
+                    >
                         {/* Decorative bubbles */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
@@ -93,7 +97,7 @@ export function Referral() {
                                 <ArrowRight className="w-5 h-5" />
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
 
                     <SectionCTA nextSectionId="hero" label="Back to Top" />
                 </motion.div>
