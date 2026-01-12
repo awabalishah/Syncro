@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SectionCTA } from './SectionCTA';
+import { MobileMockup } from './MobileMockup';
 
 const SCREENSHOTS = [
     "/images/new_result_0.png",
@@ -50,7 +51,7 @@ export function Results() {
                 // Let's stick to motion for smooth loop, but for "Zoom on Hover" we just apply it to the children.
                 >
                     {infiniteScroll.map((src, index) => (
-                        <MobileMockup key={index} src={src} />
+                        <MobileMockup key={index} src={src} className="w-[280px] md:w-[320px]" />
                     ))}
                 </motion.div>
             </div>
@@ -62,29 +63,4 @@ export function Results() {
     );
 }
 
-function MobileMockup({ src }) {
-    return (
-        <motion.div
-            className="relative flex-shrink-0 w-[280px] md:w-[320px] rounded-[32px] border-[8px] border-slate-900 bg-slate-900 overflow-hidden shadow-2xl"
-            whileHover={{ scale: 1.1, zIndex: 10, rotate: 0 }}
-            initial={{ rotate: -2 }}
-            whileInView={{ rotate: 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            style={{ willChange: "transform" }}
-        >
-            {/* Phone Notch/Bezel details */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-32 bg-slate-900 rounded-b-xl z-20"></div>
 
-            <div className="relative aspect-[9/19.5] w-full bg-slate-800 overflow-hidden rounded-[24px]">
-                <img
-                    src={src}
-                    alt="Trading Result"
-                    className="w-full h-full object-cover"
-                />
-
-                {/* Glass Reflection overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
-            </div>
-        </motion.div>
-    )
-}

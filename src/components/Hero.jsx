@@ -5,16 +5,18 @@ import { BackgroundIcons } from './BackgroundIcons';
 
 function TrustpilotWidget() {
     return (
-        <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 w-fit mb-8">
-            <div className="flex gap-0.5">
+        <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 md:px-4 py-2 rounded-full border border-white/10 w-fit mb-8">
+            <div className="flex gap-0.5 shrink-0">
                 {[1, 2, 3, 4, 5].map((i) => (
                     <div key={i} className="bg-[#00b67a] p-1">
                         <Star className="w-3 h-3 text-white fill-white" />
                     </div>
                 ))}
             </div>
-            <span className="text-xs font-medium text-slate-200">Excellent 4.9 out of 5</span>
-            <span className="text-xs text-slate-400">| Trustpilot</span>
+            <div className="flex items-center gap-1.5 whitespace-nowrap overflow-hidden">
+                <span className="text-[10px] md:text-xs font-medium text-slate-200">Excellent 4.9 / 5</span>
+                <span className="text-[10px] md:text-xs text-slate-400">| Trustpilot</span>
+            </div>
         </div>
     );
 }

@@ -81,7 +81,7 @@ export function GrowthCalculator() {
                         viewport={{ once: true }}
                         className="lg:col-span-5"
                     >
-                        <div className="bg-slate-900 rounded-[3rem] border-2 border-slate-800 shadow-[0_32px_64px_-16px_rgba(255,255,255,0.05)] p-8 relative overflow-hidden group">
+                        <div className="bg-slate-900 rounded-[2rem] md:rounded-[3rem] border-2 border-slate-800 shadow-[0_32px_64px_-16px_rgba(255,255,255,0.05)] p-6 md:p-8 relative overflow-hidden group">
                             <div className="flex items-center justify-between mb-8">
                                 <div className="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full">
                                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -98,10 +98,10 @@ export function GrowthCalculator() {
                             </div>
 
                             <div className="space-y-6 mb-10">
-                                <div className="flex items-center justify-between p-6 rounded-2xl bg-white/5 border border-white/5">
-                                    <div>
-                                        <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-2">Total Gain (2025)</p>
-                                        <p className="text-4xl font-bold text-orange-500">+{totalROI}%</p>
+                                <div className="flex flex-col sm:flex-row items-center justify-between p-4 md:p-6 rounded-2xl bg-white/5 border border-white/5 gap-4">
+                                    <div className="text-center sm:text-left">
+                                        <p className="text-slate-300 text-[10px] md:text-xs uppercase font-bold tracking-widest mb-1 md:mb-2">Total Gain (2025)</p>
+                                        <p className="text-3xl md:text-4xl font-bold text-orange-500">+{totalROI}%</p>
                                     </div>
                                     <div className="w-24 h-12">
                                         <svg viewBox="0 0 100 40" className="w-full h-full text-orange-500" fill="none" stroke="currentColor" strokeWidth="3">
@@ -110,14 +110,14 @@ export function GrowthCalculator() {
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="p-5 rounded-2xl bg-white/5 border border-white/5">
-                                        <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-2">Monthly Gain</p>
-                                        <p className="text-2xl font-bold text-emerald-400">7.84%</p>
+                                <div className="grid grid-cols-2 gap-3 md:gap-4">
+                                    <div className="p-4 md:p-5 rounded-2xl bg-white/5 border border-white/5 text-center sm:text-left">
+                                        <p className="text-slate-300 text-[10px] uppercase font-bold tracking-widest mb-1 md:mb-2 text-[8px] md:text-[10px]">Monthly Gain</p>
+                                        <p className="text-xl md:text-2xl font-bold text-emerald-400">7.84%</p>
                                     </div>
-                                    <div className="p-5 rounded-2xl bg-white/5 border border-white/5">
-                                        <p className="text-slate-300 text-xs uppercase font-bold tracking-widest mb-2">Drawdown</p>
-                                        <p className="text-2xl font-bold text-rose-400">4.12%</p>
+                                    <div className="p-4 md:p-5 rounded-2xl bg-white/5 border border-white/5 text-center sm:text-left">
+                                        <p className="text-slate-300 text-[10px] uppercase font-bold tracking-widest mb-1 md:mb-2 text-[8px] md:text-[10px]">Drawdown</p>
+                                        <p className="text-xl md:text-2xl font-bold text-rose-400">4.12%</p>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@ export function GrowthCalculator() {
                         className="lg:col-span-7 space-y-8"
                     >
                         {/* Account Growth Example Card */}
-                        <div className="bg-[#fcfcfc] rounded-[2.5rem] border-2 border-slate-200/60 shadow-[0_32px_64px_-16px_rgba(37,99,235,0.08)] p-10">
+                        <div className="bg-[#fcfcfc] rounded-[2rem] md:rounded-[2.5rem] border-2 border-slate-200/60 shadow-[0_32px_64px_-16px_rgba(37,99,235,0.08)] p-6 md:p-10">
                             <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-12">
                                 <div className="max-w-md">
                                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Account Growth Example</h3>
@@ -160,9 +160,9 @@ export function GrowthCalculator() {
                                         This example is based on verified 2025 performance data and is shown for illustrative purposes.
                                     </p>
                                 </div>
-                                <div className="bg-blue-50/50 border border-blue-100 px-6 py-4 rounded-2xl text-left sm:text-right shrink-0">
-                                    <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1">Initial Deposit</p>
-                                    <p className="text-3xl font-bold text-blue-600">${initialInvestment.toLocaleString()}</p>
+                                <div className="bg-blue-50/50 border border-blue-100 px-4 md:px-6 py-3 md:py-4 rounded-2xl text-left sm:text-right shrink-0">
+                                    <p className="text-slate-400 text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-0.5 md:mb-1">Initial Deposit</p>
+                                    <p className="text-2xl md:text-3xl font-bold text-blue-600">${initialInvestment.toLocaleString()}</p>
                                 </div>
                             </div>
 
@@ -206,10 +206,10 @@ export function GrowthCalculator() {
                         {/* Performance Chart */}
                         <div className="bg-[#fcfcfc] rounded-[2.5rem] border-2 border-slate-200/60 shadow-[0_32px_64px_-16px_rgba(37,99,235,0.12)] p-6 md:p-10 h-auto min-h-[500px]">
                             {/* Chart Header - Matching Image */}
-                            <div className="flex items-center justify-between mb-12 border-b border-slate-200 pb-6">
-                                <h4 className="text-lg md:text-xl font-bold text-slate-700">2025 Verified Monthly Performance</h4>
+                            <div className="flex flex-col sm:flex-row items-center justify-between mb-8 md:mb-12 border-b border-slate-200 pb-6 gap-4">
+                                <h4 className="text-base md:text-xl font-bold text-slate-700 text-center sm:text-left">2025 Verified Monthly Performance</h4>
                                 <div className="flex items-center bg-transparent">
-                                    <div className="px-5 py-2.5 bg-white text-slate-900 border border-slate-200 font-bold rounded-lg shadow-sm">
+                                    <div className="px-4 py-2 bg-white text-slate-900 border border-slate-200 font-bold rounded-lg shadow-sm text-sm">
                                         2025
                                     </div>
                                     <div className="ml-4 opacity-40">
@@ -238,10 +238,11 @@ export function GrowthCalculator() {
                                             dataKey="name"
                                             axisLine={false}
                                             tickLine={false}
-                                            tick={{ fill: '#64748b', fontSize: 11, fontWeight: 500 }}
+                                            tick={{ fill: '#64748b', fontSize: 10, fontWeight: 500 }}
                                             angle={-45}
                                             textAnchor="end"
-                                            dy={10}
+                                            dy={5}
+                                            interval={window.innerWidth < 640 ? 1 : 0}
                                         />
                                         <YAxis
                                             axisLine={false}
@@ -271,13 +272,13 @@ export function GrowthCalculator() {
                                                 return null;
                                             }}
                                         />
-                                        <Bar dataKey="return" fill="url(#barGradient)" radius={[4, 4, 0, 0]} barSize={35}>
+                                        <Bar dataKey="return" fill="url(#barGradient)" radius={[4, 4, 0, 0]} barSize={window.innerWidth < 640 ? 15 : 35}>
                                             {/* Labels on top of bars */}
                                             <LabelList
                                                 dataKey="return"
                                                 position="top"
                                                 formatter={(val) => `${val}%`}
-                                                style={{ fill: '#1e293b', fontSize: '11px', fontWeight: '800' }}
+                                                style={{ fill: '#1e293b', fontSize: window.innerWidth < 640 ? '9px' : '11px', fontWeight: '800' }}
                                                 offset={10}
                                             />
                                         </Bar>
