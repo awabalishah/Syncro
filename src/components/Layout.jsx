@@ -47,7 +47,7 @@ export function Layout({ children }) {
                         <a href={getNavLink("profit-share")} className="hover:text-white transition-colors">Profit Share</a>
 
                         <a
-                            href="https://discord.gg/4JWUAKPB"
+                            href="#" onClick={(e) => e.preventDefault()}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 text-sm font-bold"
@@ -87,7 +87,7 @@ export function Layout({ children }) {
                             <a href={getNavLink("results")} onClick={() => setIsMenuOpen(false)}>Results</a>
                             <a href={getNavLink("profit-share")} onClick={() => setIsMenuOpen(false)}>Profit Share</a>
                             <a
-                                href="https://discord.gg/4JWUAKPB"
+                                href="#" onClick={(e) => e.preventDefault()}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-blue-600 text-white py-3 rounded-lg w-full font-bold text-center shadow-lg shadow-blue-600/20"

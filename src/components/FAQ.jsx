@@ -51,7 +51,7 @@ const faqCategories = [
             {
                 q: "I’ve submitted everything — when will I be confirmed?",
                 a: <div className="flex flex-col gap-2">
-                    <p>Please allow up to 1–2 business days for the team to review your submission and complete the bot connection. If any information is missing, the team will contact you via your support ticket within our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>.</p>
+                    <p>Please allow up to 1–2 business days for the team to review your submission and complete the bot connection. If any information is missing, the team will contact you via your support ticket within our <a href="#" onClick={(e) => e.preventDefault()} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>.</p>
                 </div>
             }
         ]
@@ -64,25 +64,25 @@ const faqCategories = [
             {
                 q: "Which broker do I need to use?",
                 a: <div className="flex flex-col gap-2">
-                    <p>Syncro works with the following supported brokers: Vantage, VT Markets, Axi Trader, Bullwaves, PU Prime, StarTrader, and KudoTrade. Trading accounts must be opened using the official affiliate links provided in our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a> during onboarding.</p>
+                    <p>Syncro works with the following supported brokers: Vantage, VT Markets, Axi Trader, Bullwaves, PU Prime, StarTrader, and KudoTrade. Trading accounts must be opened using the official affiliate links provided in our <a href="#" onClick={(e) => e.preventDefault()} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a> during onboarding.</p>
                 </div>
             },
             {
                 q: "What happens if I open a trading account with a supported broker without using the official affiliate link?",
                 a: <div className="flex flex-col gap-2">
-                    <p>If a broker account is created without using the correct affiliate link, the system will not work. This means the account cannot be linked, bot access cannot be enabled, and support cannot activate the system. Accounts opened outside the official link inside our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a> cannot be fixed or transferred.</p>
+                    <p>If a broker account is created without using the correct affiliate link, the system will not work. This means the account cannot be linked, bot access cannot be enabled, and support cannot activate the system. Accounts opened outside the official link inside our <a href="#" onClick={(e) => e.preventDefault()} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a> cannot be fixed or transferred.</p>
                 </div>
             },
             {
                 q: "I already have a trading account with one of the supported brokers — can I use it?",
                 a: <div className="flex flex-col gap-2">
-                    <p>No. A new trading account must be created using the official affiliate links provided in our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>, or alternatively a different supported broker must be used via the official affiliate links. Existing accounts cannot be connected.</p>
+                    <p>No. A new trading account must be created using the official affiliate links provided in our <a href="#" onClick={(e) => e.preventDefault()} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>, or alternatively a different supported broker must be used via the official affiliate links. Existing accounts cannot be connected.</p>
                 </div>
             },
             {
                 q: "What leverage do I need?",
                 a: <div className="flex flex-col gap-2">
-                    <p>Required leverage: 1:300–1:500. Lower leverage levels, including 1:30, are not sufficient for the bot to operate correctly, as it may open multiple positions. Within our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>, we provide clear guidelines on which supported broker to open an account with based on your location to ensure the required leverage is available.</p>
+                    <p>Required leverage: 1:300–1:500. Lower leverage levels, including 1:30, are not sufficient for the bot to operate correctly, as it may open multiple positions. Within our <a href="#" onClick={(e) => e.preventDefault()} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>, we provide clear guidelines on which supported broker to open an account with based on your location to ensure the required leverage is available.</p>
                 </div>
             }
         ]
@@ -115,7 +115,7 @@ const faqCategories = [
                 q: "How should I think about the level of risk the bot takes with my capital?",
                 a: <div className="flex flex-col gap-3">
                     <p>Think of it like choosing how much risk you're comfortable with when investing in a fund. Some investors prefer a lower-risk approach with steadier returns, while others are comfortable taking on more risk in exchange for higher potential returns. The bot works in a similar way — you choose the level of risk that suits you, and the bot trades within those limits.</p>
-                    <p>Instructions on how to adjust your risk settings are provided within our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord community</a>; however, we strongly recommend keeping the default settings, as all past independently verified performance is based on the built-in risk configuration.</p>
+                    <p>Instructions on how to adjust your risk settings are provided within our <a href="#" onClick={(e) => e.preventDefault()} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord community</a>; however, we strongly recommend keeping the default settings, as all past independently verified performance is based on the built-in risk configuration.</p>
                 </div>
             },
             {
@@ -139,7 +139,7 @@ const faqCategories = [
             {
                 q: "How do I change the risk if I choose to?",
                 a: <div className="flex flex-col gap-2">
-                    <p>A step-by-step video tutorial is available inside our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a> showing exactly how to adjust your risk settings. Please watch the video carefully in full before making any changes.</p>
+                    <p>A step-by-step video tutorial is available inside our <a href="#" onClick={(e) => e.preventDefault()} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a> showing exactly how to adjust your risk settings. Please watch the video carefully in full before making any changes.</p>
                 </div>
             }
         ]
@@ -196,14 +196,14 @@ const faqCategories = [
             {
                 q: "Will Syncro ever message me directly?",
                 a: <div className="flex flex-col gap-3">
-                    <p>No. Syncro will never send unsolicited direct messages. All official communication is handled exclusively through legitimate support tickets inside our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>.</p>
-                    <p>We do not communicate via direct messages in order to protect our community from impersonation attempts and scams. If you require support or need to contact the team, this must always be done through the support ticket system in our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>.</p>
+                    <p>No. Syncro will never send unsolicited direct messages. All official communication is handled exclusively through legitimate support tickets inside our <a href="#" onClick={(e) => e.preventDefault()} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>.</p>
+                    <p>We do not communicate via direct messages in order to protect our community from impersonation attempts and scams. If you require support or need to contact the team, this must always be done through the support ticket system in our <a href="#" onClick={(e) => e.preventDefault()} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>.</p>
                 </div>
             },
             {
                 q: "How do I get help if I need it?",
                 a: <div className="flex flex-col gap-2">
-                    <p>Open a support ticket in the dedicated support channel within our <a href="https://discord.gg/4JWUAKPB" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>. A team member will assist you privately, securely, and professionally through the ticket system.</p>
+                    <p>Open a support ticket in the dedicated support channel within our <a href="#" onClick={(e) => e.preventDefault()} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-500 hover:underline">Discord server</a>. A team member will assist you privately, securely, and professionally through the ticket system.</p>
                 </div>
             }
         ]

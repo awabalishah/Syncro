@@ -172,7 +172,7 @@ export function FeaturesPage() {
                         {/* CTA Button */}
                         <div className="flex justify-center mt-16">
                             <motion.a
-                                href="https://discord.gg/4JWUAKPB"
+                                href="#" onClick={(e) => e.preventDefault()}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 whileHover={{ scale: 1.05 }}

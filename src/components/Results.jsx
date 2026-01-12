@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { SectionCTA } from './SectionCTA';
 import { MobileMockup } from './MobileMockup';
 
@@ -41,16 +41,16 @@ export function Results() {
                 <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10" />
 
                 <motion.div
-                    className="flex gap-8 px-8"
+                    className="flex gap-8 px-8 cursor-grab active:cursor-grabbing"
+                    drag="x"
+                    dragConstraints={{ left: -2000, right: 2000 }} // Larger constraints to allow free movement
                     animate={{ x: ["0%", "-33.33%"] }}
                     transition={{
                         duration: 15,
                         ease: "linear",
                         repeat: Infinity
                     }}
-                    whileHover={{ animationPlayState: 'paused' }} // CSS pause ref is harder with purely motion, we can use hover to slow down or pause logic if needed, but framer motion simple loop usually doesn't pause easily on hover without complex state. 
-                // Alternative: Simple CSS animation for the marquee if we want easy pause-on-hover.
-                // Let's stick to motion for smooth loop, but for "Zoom on Hover" we just apply it to the children.
+                    whileHover={{ scale: 1.01 }}
                 >
                     {infiniteScroll.map((src, index) => (
                         <MobileMockup key={index} src={src} className="w-[280px] md:w-[320px]" />
