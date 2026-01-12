@@ -99,7 +99,7 @@ export function Referral() {
                         </div>
                     </motion.div>
 
-                    <SectionCTA nextSectionId="hero" label="Back to Top" />
+                    <SectionCTA nextSectionId="hero" label="Back to Top" direction="up" />
                 </motion.div>
             </div>
         </section>

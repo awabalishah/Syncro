@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, ArrowUp } from 'lucide-react';
 
-export function SectionCTA({ nextSectionId, label = "Next Section" }) {
+export function SectionCTA({ nextSectionId, label = "Next Section", direction = "down" }) {
     const scrollToNext = () => {
         const element = document.getElementById(nextSectionId);
         if (element) {
@@ -24,10 +24,14 @@ export function SectionCTA({ nextSectionId, label = "Next Section" }) {
 
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors shadow-inner">
                     <motion.div
-                        animate={{ y: [0, 3, 0] }}
+                        animate={{ y: direction === 'up' ? [0, -3, 0] : [0, 3, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                     >
-                        <ArrowDown className="w-5 h-5 text-white" />
+                        {direction === 'up' ? (
+                            <ArrowUp className="w-5 h-5 text-white" />
+                        ) : (
+                            <ArrowDown className="w-5 h-5 text-white" />
+                        )}
                     </motion.div>
                 </div>
 
