@@ -26,7 +26,9 @@ export function Results() {
         <section id="results" className="py-24 bg-slate-50 overflow-hidden relative">
             <div className="container mx-auto px-6 mb-16">
                 <div className="text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Client Results</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">
+                        Client <span className="text-blue-600">Results</span>
+                    </h2>
                     <p className="text-slate-600 text-lg">
                         Real client results using the automated trading system
                     </p>
@@ -40,9 +42,9 @@ export function Results() {
 
                 <motion.div
                     className="flex gap-8 px-8"
-                    animate={{ x: ["0%", "-33.33%"] }} // Move by one-third (one original set length)
+                    animate={{ x: ["0%", "-33.33%"] }}
                     transition={{
-                        duration: 20,
+                        duration: 15,
                         ease: "linear",
                         repeat: Infinity
                     }}

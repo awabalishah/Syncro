@@ -92,9 +92,13 @@ export function GrowthCalculator() {
 
                             <div className="mb-10">
                                 <h3 className="text-3xl font-black text-white mb-3">Syncro Verified Results</h3>
-                                <p className="text-slate-400 text-sm flex items-center gap-2 font-medium">
-                                    Managed by Syncro AI • <span className="text-blue-400 flex items-center gap-2 font-bold">Verified by <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto" /></span>
-                                </p>
+                                <div className="text-slate-400 text-sm flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 font-medium">
+                                    <span>Managed by Syncro AI</span>
+                                    <span className="hidden sm:inline opacity-50">•</span>
+                                    <span className="text-blue-400 flex items-center gap-2 font-bold">
+                                        Verified by <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto" />
+                                    </span>
+                                </div>
                             </div>
 
                             <div className="space-y-6 mb-10">
@@ -224,65 +228,66 @@ export function GrowthCalculator() {
                                 <h5 className="text-[14px] font-bold text-slate-700">Monthly Gain(Change)</h5>
                             </div>
 
-                            <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-slate-200">
-                                <div className="h-[320px] min-w-[500px] md:min-w-full">
-                                    <ResponsiveContainer width="100%" height="100%">
-                                        <BarChart data={MONTHLY_DATA} margin={{ top: 30, right: 0, left: -25, bottom: 40 }}>
-                                            <defs>
-                                                <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
-                                                    <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.9} />
-                                                    <stop offset="100%" stopColor="#10b981" stopOpacity={0.8} />
-                                                </linearGradient>
-                                            </defs>
-                                            <CartesianGrid strokeDasharray="0" vertical={false} stroke="#e2e8f0" />
-                                            <XAxis
-                                                dataKey="name"
-                                                axisLine={false}
-                                                tickLine={false}
-                                                tick={{ fill: '#64748b', fontSize: 10, fontWeight: 500 }}
-                                                angle={-45}
-                                                textAnchor="end"
-                                                dy={5}
+                            <div className="h-[320px] relative">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <BarChart data={MONTHLY_DATA} margin={{ top: 20, right: 0, left: -25, bottom: 40 }}>
+                                        <defs>
+                                            <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.9} />
+                                                <stop offset="100%" stopColor="#10b981" stopOpacity={0.8} />
+                                            </linearGradient>
+                                        </defs>
+                                        <CartesianGrid strokeDasharray="0" vertical={false} stroke="#e2e8f0" />
+                                        <XAxis
+                                            dataKey="name"
+                                            axisLine={false}
+                                            tickLine={false}
+                                            tick={{ fill: '#64748b', fontSize: 10, fontWeight: 500 }}
+                                            angle={-45}
+                                            textAnchor="end"
+                                            dy={5}
+                                            interval={window.innerWidth < 640 ? 1 : 0}
+                                        />
+                                        <YAxis
+                                            axisLine={false}
+                                            tickLine={false}
+                                            domain={[0, 15]}
+                                            ticks={[0, 5, 10, 15]}
+                                            tick={{ fill: '#94a3b8', fontSize: 11 }}
+                                            tickFormatter={(value) => `${value}%`}
+                                        />
+                                        <Tooltip
+                                            cursor={{ fill: 'rgba(37, 99, 235, 0.05)', radius: 8 }}
+                                            content={({ active, payload, label }) => {
+                                                if (active && payload && payload.length) {
+                                                    return (
+                                                        <div className="bg-white border-2 border-blue-500/20 px-4 py-2 rounded-xl shadow-lg relative">
+                                                            <p className="text-slate-700 font-bold text-sm">
+                                                                {label}
+                                                            </p>
+                                                            <p className="text-blue-600 font-black text-lg">
+                                                                {payload[0].value}%
+                                                            </p>
+                                                            {/* Tooltip triangle tail */}
+                                                            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-r-2 border-b-2 border-blue-500/20 rotate-45" />
+                                                        </div>
+                                                    );
+                                                }
+                                                return null;
+                                            }}
+                                        />
+                                        <Bar dataKey="return" fill="url(#barGradient)" radius={[4, 4, 0, 0]} barSize={window.innerWidth < 640 ? 15 : 35}>
+                                            {/* Labels on top of bars */}
+                                            <LabelList
+                                                dataKey="return"
+                                                position="top"
+                                                formatter={(val) => `${val}%`}
+                                                style={{ fill: '#1e293b', fontSize: window.innerWidth < 640 ? '7px' : '11px', fontWeight: '800' }}
+                                                offset={10}
                                             />
-                                            <YAxis
-                                                axisLine={false}
-                                                tickLine={false}
-                                                domain={[0, 15]}
-                                                ticks={[0, 5, 10, 15]}
-                                                tick={{ fill: '#94a3b8', fontSize: 11 }}
-                                                tickFormatter={(value) => `${value}%`}
-                                            />
-                                            <Tooltip
-                                                cursor={{ fill: 'rgba(37, 99, 235, 0.05)', radius: 8 }}
-                                                content={({ active, payload, label }) => {
-                                                    if (active && payload && payload.length) {
-                                                        return (
-                                                            <div className="bg-white border-2 border-blue-500/20 px-4 py-2 rounded-xl shadow-lg relative">
-                                                                <p className="text-slate-700 font-bold text-sm">
-                                                                    {label}
-                                                                </p>
-                                                                <p className="text-blue-600 font-black text-lg">
-                                                                    {payload[0].value}%
-                                                                </p>
-                                                                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-r-2 border-b-2 border-blue-500/20 rotate-45" />
-                                                            </div>
-                                                        );
-                                                    }
-                                                    return null;
-                                                }}
-                                            />
-                                            <Bar dataKey="return" fill="url(#barGradient)" radius={[4, 4, 0, 0]} barSize={25}>
-                                                <LabelList
-                                                    dataKey="return"
-                                                    position="top"
-                                                    formatter={(val) => `${val}%`}
-                                                    style={{ fill: '#1e293b', fontSize: '10px', fontWeight: '800' }}
-                                                    offset={12}
-                                                />
-                                            </Bar>
-                                        </BarChart>
-                                    </ResponsiveContainer>
-                                </div>
+                                        </Bar>
+                                    </BarChart>
+                                </ResponsiveContainer>
                             </div>
                         </div>
                     </motion.div>
