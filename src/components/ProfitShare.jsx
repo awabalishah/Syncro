@@ -5,7 +5,7 @@ import { BackgroundIcons } from './BackgroundIcons';
 
 export function ProfitShare() {
     return (
-        <section id="fees" className="py-24 bg-slate-950 relative overflow-hidden">
+        <section id="profit-share" className="py-24 bg-slate-950 relative overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-blue-600/10 blur-[120px] rounded-full -z-1" />
 
             <BackgroundIcons />
