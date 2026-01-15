@@ -12,7 +12,7 @@ export function ProfitShare() {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Profit Share & <span className="text-blue-600">Transparency</span></h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Management Fees & <span className="text-blue-600">Transparency</span></h2>
                     <h3 className="text-xl text-blue-400 font-bold mb-8 text-center uppercase tracking-widest">Clear. Fair. Performance Based</h3>
                     <p className="text-slate-300 text-lg leading-relaxed">
                         If your account doesn’t grow in a given month, you pay nothing.
@@ -60,7 +60,7 @@ export function ProfitShare() {
                     >
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full" />
 
-                        <h3 className="text-2xl font-bold mb-10 text-white">Profit Retention Model</h3>
+                        <h3 className="text-2xl font-bold mb-10 text-white">Management Fee Model</h3>
                         <div className="space-y-4 flex-grow">
                             <div className="p-6 bg-slate-800/40 rounded-2xl border border-slate-700/50 flex flex-col items-start gap-1 transition-colors hover:bg-slate-800/60">
                                 <span className="text-slate-400 font-medium text-sm uppercase tracking-wider">0% – 6% Monthly Growth</span>

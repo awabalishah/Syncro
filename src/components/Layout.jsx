@@ -44,7 +44,7 @@ export function Layout({ children }) {
                             <span className="ml-2 px-1.5 py-0.5 text-[10px] bg-blue-600 text-white rounded font-bold uppercase tracking-wider">New</span>
                         </Link>
                         <a href={getNavLink("results")} className="hover:text-white transition-colors">Results</a>
-                        <a href={getNavLink("profit-share")} className="hover:text-white transition-colors">Profit Share</a>
+                        <a href={getNavLink("profit-share")} className="hover:text-white transition-colors">Management Fees</a>
 
                         <button
                             disabled
@@ -83,7 +83,7 @@ export function Layout({ children }) {
                                 <span className="px-1.5 py-0.5 text-[10px] bg-blue-600 text-white rounded font-bold uppercase tracking-wider">New</span>
                             </Link>
                             <a href={getNavLink("results")} onClick={() => setIsMenuOpen(false)}>Results</a>
-                            <a href={getNavLink("profit-share")} onClick={() => setIsMenuOpen(false)}>Profit Share</a>
+                            <a href={getNavLink("profit-share")} onClick={() => setIsMenuOpen(false)}>Management Fees</a>
                             <button
                                 disabled
                                 className="bg-white/5 border border-white/10 text-slate-400 py-3 rounded-lg w-full font-bold text-center cursor-not-allowed"
