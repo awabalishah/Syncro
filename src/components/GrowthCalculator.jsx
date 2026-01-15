@@ -112,7 +112,7 @@ export function GrowthCalculator() {
                                 <div className="flex flex-col sm:flex-row items-center justify-between p-4 md:p-6 rounded-2xl bg-white/5 border border-white/5 gap-4">
                                     <div className="text-center sm:text-left">
                                         <p className="text-slate-300 text-[10px] md:text-xs uppercase font-bold tracking-widest mb-1 md:mb-2">Total Gain (2025)</p>
-                                        <p className="text-3xl md:text-4xl font-bold text-orange-500">+{totalROI}%</p>
+                                        <p className="text-3xl md:text-4xl font-bold text-orange-500">+174.43%</p>
                                     </div>
                                     <div className="w-24 h-12">
                                         <svg viewBox="0 0 100 40" className="w-full h-full text-orange-500" fill="none" stroke="currentColor" strokeWidth="3">
@@ -124,11 +124,11 @@ export function GrowthCalculator() {
                                 <div className="grid grid-cols-2 gap-3 md:gap-4">
                                     <div className="p-4 md:p-5 rounded-2xl bg-white/5 border border-white/5 text-center sm:text-left">
                                         <p className="text-slate-300 text-[10px] uppercase font-bold tracking-widest mb-1 md:mb-2 text-[8px] md:text-[10px]">Monthly Gain</p>
-                                        <p className="text-xl md:text-2xl font-bold text-emerald-400">7.84%</p>
+                                        <p className="text-xl md:text-2xl font-bold text-emerald-400">8.03%</p>
                                     </div>
                                     <div className="p-4 md:p-5 rounded-2xl bg-white/5 border border-white/5 text-center sm:text-left">
                                         <p className="text-slate-300 text-[10px] uppercase font-bold tracking-widest mb-1 md:mb-2 text-[8px] md:text-[10px]">Drawdown</p>
-                                        <p className="text-xl md:text-2xl font-bold text-rose-400">4.12%</p>
+                                        <p className="text-xl md:text-2xl font-bold text-rose-400">3.95%</p>
                                     </div>
                                 </div>
                             </div>
