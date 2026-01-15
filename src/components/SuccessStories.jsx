@@ -18,7 +18,9 @@ const TESTIMONIALS = [
         image: "https://randomuser.me/api/portraits/men/32.jpg",
         content: <div className="flex flex-col gap-2">
             <p>"The transparency is what sold me. Being able to see the live results verified by:</p>
-            <img src={myfxbookLogo} alt="Myfxbook" className="h-4 w-auto self-start grayscale opacity-70" />
+            <a href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753" target="_blank" rel="noopener noreferrer" className="self-start">
+                <img src={myfxbookLogo} alt="Myfxbook" className="h-4 w-auto grayscale opacity-70 hover:opacity-100 transition-opacity" />
+            </a>
             <p>before depositing gave me total confidence. Best investment I've made this year."</p>
         </div>,
         rating: 5

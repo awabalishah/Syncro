@@ -87,7 +87,14 @@ export function GrowthCalculator() {
                                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                                     <span className="text-blue-400 text-[10px] font-bold uppercase tracking-wider">Live Results</span>
                                 </div>
-                                <ExternalLink className="w-5 h-5 text-slate-500 opacity-50 group-hover:opacity-100 transition-opacity" />
+                                <a
+                                    href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:scale-110 transition-transform"
+                                >
+                                    <ExternalLink className="w-5 h-5 text-slate-500 opacity-50 group-hover:opacity-100 transition-opacity" />
+                                </a>
                             </div>
 
                             <div className="mb-10">
@@ -141,10 +148,15 @@ export function GrowthCalculator() {
                                 </div>
                             </div>
 
-                            <button className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 group shadow-xl shadow-blue-900/40">
+                            <a
+                                href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 group shadow-xl shadow-blue-900/40"
+                            >
                                 View Live Stats on <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto brightness-0 invert" />
                                 <ExternalLink className="w-4 h-4" />
-                            </button>
+                            </a>
                         </div>
                     </motion.div>
 

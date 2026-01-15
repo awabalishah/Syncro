@@ -57,7 +57,9 @@ export function FeaturesPage() {
             title: "Real-Time Transparency",
             description: <div className="flex flex-col gap-2">
                 <p>You can see every trade directly inside your own MT5 trading account as shown in our client results section. Performance is tracked through our live, independently verified tracking link on:</p>
-                <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto self-start grayscale opacity-70" />
+                <a href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753" target="_blank" rel="noopener noreferrer" className="self-start">
+                    <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto grayscale opacity-70 hover:opacity-100 transition-opacity" />
+                </a>
                 <p>that updates in real time.</p>
             </div>
         },

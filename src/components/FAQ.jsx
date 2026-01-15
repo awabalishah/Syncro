@@ -28,13 +28,13 @@ const faqCategories = [
             {
                 q: "Where can I view live statistics and historical performance?",
                 a: <div className="flex flex-col gap-2">
-                    <p>Live performance and profits can be tracked in real time via your MT5 app. Our public <span className="font-semibold text-slate-900">Myfxbook</span> tracking link provides full transparency on historical profits, drawdowns, trade frequency, and typical trading times.</p>
+                    <p>Live performance and profits can be tracked in real time via your MT5 app. Our public <a href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:underline">Myfxbook</a> tracking link provides full transparency on historical profits, drawdowns, trade frequency, and typical trading times.</p>
                 </div>
             },
             {
                 q: "Has the bot performed consistently?",
                 a: <div className="flex flex-col gap-2">
-                    <p>Based on live, independently verified data via <span className="font-semibold text-slate-900">Myfxbook</span>, the bot has demonstrated consistent monthly performance since June 2024, delivering an average return of 7.8% per month throughout 2025. Past performance is not a guarantee of future results.</p>
+                    <p>Based on live, independently verified data via <a href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:underline">Myfxbook</a>, the bot has demonstrated consistent monthly performance since June 2024, delivering an average return of 7.8% per month throughout 2025. Past performance is not a guarantee of future results.</p>
                 </div>
             }
         ]
@@ -122,7 +122,7 @@ const faqCategories = [
                 q: "What risk level does the bot use by default?",
                 a: <div className="flex flex-col gap-3">
                     <p>The bot operates at a 30% risk setting by default. This does not mean 30% of your account is risked on a single trade. Instead, it is a relative risk setting that controls position sizing and overall exposure within the bot's built-in risk management framework.</p>
-                    <p>This default setting has been used consistently for 18+ months of live, independently verified performance, as shown on our official <span className="font-semibold text-slate-900">Myfxbook</span> tracking link. Over this period, the bot has delivered positive account growth every month, while maintaining a clear focus on capital protection first and account growth second.</p>
+                    <p>This default setting has been used consistently for 18+ months of live, independently verified performance, as shown on our official <a href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:underline">Myfxbook</a> tracking link. Over this period, the bot has delivered positive account growth every month, while maintaining a clear focus on capital protection first and account growth second.</p>
                 </div>
             },
             {
@@ -153,7 +153,7 @@ const faqCategories = [
                 q: "How do I view my performance?",
                 a: <div className="flex flex-col gap-3">
                     <p>You can view your performance directly through your MT5 app, where you can monitor your balance, equity, open and closed trades in real time.</p>
-                    <p>In addition, performance can be tracked through our public <span className="font-semibold text-slate-900">Myfxbook</span> tracking link, which provides transparent visibility of historical returns, drawdowns, trade frequency, and typical trading times. Together, these tools allow you to monitor both short-term activity and long-term performance.</p>
+                    <p>In addition, performance can be tracked through our public <a href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:underline">Myfxbook</a> tracking link, which provides transparent visibility of historical returns, drawdowns, trade frequency, and typical trading times. Together, these tools allow you to monitor both short-term activity and long-term performance.</p>
                 </div>
             }
         ]

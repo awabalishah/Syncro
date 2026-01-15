@@ -53,7 +53,7 @@ export function HowItWorks() {
             icon: <BarChart3 className="w-8 h-8 text-cyan-600" />,
             span: "md:col-span-1",
             color: "bg-cyan-50",
-            link: "https://www.myfxbook.com/members/syncro_automation" // Placeholder
+            link: "https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753"
         }
     ];
 
