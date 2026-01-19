@@ -23,57 +23,57 @@ export function Technology() {
         {
             icon: <Coins className="w-5 h-5" />,
             title: "XAUUSD (spot gold)",
-            desc: "The system is exclusively designed to trade XAUUSD (spot gold), and the strategy is tailored specifically for this market."
+            desc: "The linked strategy focuses exclusively on XAUUSD (spot gold) and is configured specifically for this market."
         },
         {
             icon: <Zap className="w-5 h-5" />,
             title: "Fixed scalping strategy",
-            desc: "The linked system uses a predefined scalping strategy focused on short-duration trades."
+            desc: "The linked strategy follows a predefined scalping approach focused on short-duration trades."
         },
         {
             icon: <BarChart3 className="w-5 h-5" />,
             title: "Short market exposure",
-            desc: "Trades typically last minutes, reducing prolonged exposure to market volatility."
+            desc: "Trades typically last minutes, limiting prolonged exposure to market conditions."
         },
         {
             icon: <Target className="w-5 h-5" />,
             title: "AI-optimised entry logic",
-            desc: "Entry conditions are optimised using AI processes combined with multiple technical indicators."
+            desc: "Entry conditions are generated using rule-based logic supported by machine-learning analysis and multiple technical inputs."
         },
         {
             icon: <ShieldCheck className="w-5 h-5" />,
             title: "Multi-indicator confirmation",
-            desc: "Trades require alignment across 13 custom indicators before execution."
+            desc: "Trade signals are generated only when multiple technical indicators align"
         },
         {
             icon: <Lock className="w-5 h-5" />,
             title: "Built-in protection mechanisms",
-            desc: "Seven independent safeguards are used to manage downside risk."
+            desc: "The strategy incorporates multiple predefined safeguards designed to limit exposure."
         },
         {
             icon: <Calendar className="w-5 h-5" />,
             title: "Controlled trading schedule",
-            desc: "Trades run Monday to Thursday only; Fridays are excluded to avoid unstable conditions."
+            desc: "The strategy is configured to operate Monday to Thursday, with Fridays excluded due to market conditions. Trading does not occur on weekends when markets are closed."
         },
         {
             icon: <ShieldAlert className="w-5 h-5" />,
             title: "Equity drawdown protection",
-            desc: "A 30% equity stop is in place to limit drawdown exposure."
+            desc: "The strategy includes a predefined equity threshold set at 30%, after which further trading activity is automatically restricted."
         },
         {
             icon: <Settings className="w-5 h-5" />,
             title: "Fixed position sizing",
-            desc: "The system uses fixed lot sizes for predictable risk exposure."
+            desc: "The strategy applies fixed position sizes as part of its predefined configuration."
         },
         {
             icon: <Activity className="w-5 h-5" />,
             title: "Automated hedging logic",
-            desc: "Hedge orders may be added automatically using a grid-based mechanism when conditions align."
+            desc: "Hedge orders may be generated automatically using predefined grid logic when specific conditions are met."
         },
         {
             icon: <Clock className="w-5 h-5" />,
             title: "Selective trade frequency",
-            desc: "On average, the system places 2–4 trades per week."
+            desc: "Based on historical data, the strategy typically executes 2–4 trades per week."
         }
     ];
 

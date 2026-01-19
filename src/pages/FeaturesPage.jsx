@@ -23,50 +23,50 @@ export function FeaturesPage() {
     const generalFeatures = [
         {
             icon: <Zap className="w-8 h-8 text-blue-600" />,
-            title: "Smart Automation, Built for Consistency",
-            description: "Syncro uses an automated system that only operates when market conditions meet strict rules. Instead of trading constantly, it waits for the right moments to act helping focus on steady, long-term growth rather than short-term activity."
+            title: "Smart Automation, Rule-Based Execution",
+            description: "The system operates automatically based on predefined market conditions and structured rules. Rather than trading continuously, activity occurs only when specific criteria are met."
         },
         {
             icon: <Target className="w-8 h-8 text-indigo-600" />,
-            title: "Trades Only When Conditions Are Right",
-            description: "The bot does not trade every day. Some days are active, others are quiet. This is intentional. Trades are only placed when conditions align, helping reduce unnecessary risk during uncertain markets."
+            title: "Trades Only When Conditions Are Met",
+            description: "The system does not trade every day. Some periods are more active than others by design. Trades are generated only when predefined conditions align."
         },
         {
             icon: <TrendingUp className="w-8 h-8 text-emerald-600" />,
-            title: "Results Vary With Market Conditions",
-            description: "Some periods may feel more active, while others may feel very quiet. This is normal. The bot adjusts how it operates based on market conditions to help protect accounts during uncertain or unstable phases. The focus isn't constant activity — it's steady, disciplined performance over time."
+            title: "System Behaviour Adapts to Market Conditions",
+            description: "Activity levels may vary over time depending on market conditions. Periods of higher or lower activity are expected, reflecting how the system responds to different market environments."
         },
         {
             icon: <ShieldAlert className="w-8 h-8 text-orange-600" />,
-            title: "Careful Use of Your Balance",
-            description: "The system only uses a portion of your available balance at any one time. This helps manage risk carefully and allows positions to adjust smoothly as markets move."
+            title: "Controlled Balance Utilisation",
+            description: "The strategy allocates only a portion of available account equity at any given time, based on predefined parameters."
         },
         {
             icon: <ShieldCheck className="w-8 h-8 text-red-600" />,
-            title: "Built-In Risk Controls",
-            description: "The bot is designed with safety and consistency in mind, not high-risk trading.",
+            title: "System Operating Constraints",
+            description: "The strategy operates within a set of predefined constraints that govern how trades are executed and how exposure is limited.",
             list: [
                 "No aggressive leverage",
                 "No martingale behaviour",
-                "Risk limits applied at account level",
-                "Withdraw your funds at any time"
+                "Account-level constraints applied",
+                "Funds remain accessible via your broker at all times"
             ]
         },
         {
             icon: <Eye className="w-8 h-8 text-cyan-600" />,
             title: "Real-Time Transparency",
             description: <div className="flex flex-col gap-2">
-                <p>You can see every trade directly inside your own MT5 trading account as shown in our client results section. Performance is tracked through our live, independently verified tracking link on:</p>
-                <a href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753" target="_blank" rel="noopener noreferrer" className="self-start">
+                <p>All trade activity is visible directly within your own MT5 account.</p>
+                <p>Independently tracked data is available via a live Myfxbook link that updates automatically.</p>
+                <a href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753" target="_blank" rel="noopener noreferrer" className="self-start mt-2">
                     <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto grayscale opacity-70 hover:opacity-100 transition-opacity" />
                 </a>
-                <p>that updates in real time.</p>
             </div>
         },
         {
             icon: <Clock className="w-8 h-8 text-purple-600" />,
-            title: "Fully Automated, No Daily Effort",
-            description: "Once connected to the Syncro the bot runs automatically in the background. There's no need to manage trades or make adjustments — you can simply check in whenever you like."
+            title: "Automated Execution, Minimal Interaction",
+            description: "Once connected, the system executes trades automatically based on predefined rules. Ongoing activity runs in the background, with users able to monitor performance and account activity at their discretion."
         }
     ];
 
@@ -74,17 +74,17 @@ export function FeaturesPage() {
         {
             icon: <CloudRain className="w-8 h-8 text-slate-600" />,
             title: "Market Conditions Not Suitable",
-            description: "If markets are too volatile or unclear, the bot stays on the sidelines. The first priority is protecting your balance — growth comes second."
+            description: "During periods of heightened volatility or unclear market structure, the system may remain inactive rather than force participation."
         },
         {
             icon: <CheckCircle2 className="w-8 h-8 text-blue-500" />,
             title: "Entry Conditions Not Fully Met",
-            description: "Even if markets appear active, the bot will only trade when all system checks align. There is no guessing or rushing."
+            description: "Even when markets appear active, trades are only generated once all system checks align. Activity does not occur unless predefined criteria are satisfied."
         },
         {
             icon: <AlertTriangle className="w-8 h-8 text-yellow-600" />,
             title: "Market Events & Uncertainty",
-            description: "During major news events or uncertain periods, the bot may pause trading to help protect your account balance."
+            description: "During major news events or periods of increased uncertainty, trading activity may pause in response to changing market conditions."
         }
     ];
 
@@ -97,10 +97,10 @@ export function FeaturesPage() {
                     className="text-center mb-20"
                 >
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 text-slate-900">
-                        Powerful <span className="text-blue-600">Features</span> for People Focused on <span className="text-blue-600">Growing Wealth</span>
+                        Powerful <span className="text-blue-600">Features</span> Built for <span className="text-blue-600">Structured Trading Automation</span>
                     </h1>
                     <p className="text-slate-600 max-w-2xl mx-auto text-xl font-medium">
-                        Syncro is engineered to seamlessly connect users to an automated trading system that operates with advanced algorithms and strict risk management.
+                        The features below outline the core components and operating logic of the automated trading system available through Syncro.
                     </p>
                 </motion.div>
 
@@ -145,9 +145,9 @@ export function FeaturesPage() {
 
                     <div className="relative z-10">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">The <span className="text-blue-600">Bot</span> only Trades when <span className="text-blue-600">Conditions are Right!</span></h2>
+                            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Designed to Be <span className="text-blue-600">Selective, Not Constant</span></h2>
                             <p className="text-slate-600 max-w-2xl mx-auto text-xl">
-                                Here's why the system might stay on the sidelines.
+                                The system does not aim to trade continuously across all market conditions.
                             </p>
                         </div>
 

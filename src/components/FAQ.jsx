@@ -306,7 +306,7 @@ export function FAQ() {
                     </motion.div>
                 </div>
 
-                <SectionCTA nextSectionId="fees" label="Management Fees" />
+                <SectionCTA nextSectionId="fees" label="Service Fees" />
             </div>
         </section>
     );

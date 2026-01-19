@@ -28,18 +28,23 @@ export function Features() {
 
                             <h2 className="text-3xl md:text-6xl font-bold text-white mb-8 leading-tight">
                                 One System. <br />
-                                <span className="text-blue-200">Endless Possibilities.</span>
+                                <span className="text-blue-200">Intelligent Execution.</span>
                             </h2>
 
-                            <p className="text-blue-100 text-lg md:text-xl font-medium mb-10 leading-relaxed">
-                                Experience the future of automated trading. Syncro provides a seamless connection to an advanced trading system that combines algorithmic execution with strict risk management, designed to support consistent, long-term performance.
-                            </p>
+                            <div className="text-blue-100 text-lg md:text-xl font-medium mb-10 leading-relaxed space-y-4">
+                                <p>
+                                    The system accessible through Syncro is designed around specific operating principles that govern how trades are identified, executed, and monitored.
+                                </p>
+                                <p>
+                                    The features below outline how these components work together.
+                                </p>
+                            </div>
 
                             <Link
                                 to="/features"
                                 className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all hover:scale-105 shadow-xl shadow-black/20"
                             >
-                                Learn About All Features
+                                Explore System Features
                                 <ChevronRight className="w-5 h-5" />
                             </Link>
                         </div>

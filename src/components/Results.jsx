@@ -26,11 +26,14 @@ export function Results() {
         <section id="results" className="py-24 bg-slate-50 overflow-hidden relative">
             <div className="container mx-auto px-6 mb-16">
                 <div className="text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">
-                        Client <span className="text-blue-600">Results</span>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">
+                        Client <span className="text-blue-600">Trade Activity Examples</span>
                     </h2>
-                    <p className="text-slate-600 text-lg">
-                        Real client results using the automated trading system
+                    <p className="text-slate-600 text-lg mb-2">
+                        Examples of live trade execution from accounts connected to the automated trading system.
+                    </p>
+                    <p className="text-slate-400 text-sm max-w-2xl mx-auto">
+                        Screenshots are provided for transparency and demonstration purposes only. Individual account activity and outcomes will vary.
                     </p>
                 </div>
             </div>

@@ -44,7 +44,7 @@ export function Layout({ children }) {
                             <span className="ml-2 px-1.5 py-0.5 text-[10px] bg-blue-600 text-white rounded font-bold uppercase tracking-wider">New</span>
                         </Link>
                         <a href={getNavLink("results")} className="hover:text-white transition-colors">Results</a>
-                        <a href={getNavLink("profit-share")} className="hover:text-white transition-colors">Management Fees</a>
+                        <a href={getNavLink("profit-share")} className="hover:text-white transition-colors">Service Fees</a>
 
                         <button
                             disabled
@@ -83,7 +83,7 @@ export function Layout({ children }) {
                                 <span className="px-1.5 py-0.5 text-[10px] bg-blue-600 text-white rounded font-bold uppercase tracking-wider">New</span>
                             </Link>
                             <a href={getNavLink("results")} onClick={() => setIsMenuOpen(false)}>Results</a>
-                            <a href={getNavLink("profit-share")} onClick={() => setIsMenuOpen(false)}>Management Fees</a>
+                            <a href={getNavLink("profit-share")} onClick={() => setIsMenuOpen(false)}>Service Fees</a>
                             <button
                                 disabled
                                 className="bg-white/5 border border-white/10 text-slate-400 py-3 rounded-lg w-full font-bold text-center cursor-not-allowed"
@@ -108,7 +108,7 @@ export function Layout({ children }) {
                         </p>
                         <p>
                             Past performance, historical data, and any examples shown do not guarantee future results.
-                            All performance/management fees charged by Syncro apply only to new profits above the previous best balance.
+                            All performance/service fees charged by Syncro apply only to new profits above the previous best balance.
                             Nothing provided by Syncro or any representative constitutes financial advice, investment advice, or a recommendation to trade.
                             By proceeding, you acknowledge that you understand these risks and accept full responsibility for any financial decisions and outcomes.
                         </p>

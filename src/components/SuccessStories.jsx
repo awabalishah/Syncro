@@ -43,10 +43,10 @@ export function SuccessStories() {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mt-4 text-white mb-6">
-                        What Our <span className="text-blue-600">Clients Say</span>
+                        What <span className="text-blue-600">Users Say</span> About Syncro
                     </h2>
                     <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-                        Real experiences from people using Syncro for hands-off access to automated trading.
+                        Feedback from users on their experience using Syncro’s technology and support services.
                     </p>
                 </div>
 
