@@ -141,11 +141,14 @@ export function GrowthCalculator() {
                                 href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-[1.5rem] font-black text-lg transition-all flex items-center justify-center gap-3 group shadow-[0_20px_40px_-10px_rgba(37,99,235,0.4)] relative overflow-hidden border-beam"
+                                className="w-full py-5 md:py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-[1.5rem] font-black text-sm md:text-lg transition-all flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-3 group shadow-[0_20px_40px_-10px_rgba(37,99,235,0.4)] relative overflow-hidden border-beam"
                             >
-                                <span className="relative z-10 flex items-center gap-3">
-                                    View Live Stats on <img src={myfxbookLogo} alt="Myfxbook" className="h-7 w-auto brightness-0 invert" />
-                                    <ExternalLink className="w-5 h-5" />
+                                <span className="relative z-10 flex items-center gap-2 md:gap-3">
+                                    View Live Stats on
+                                </span>
+                                <span className="relative z-10 flex items-center gap-2 md:gap-3">
+                                    <img src={myfxbookLogo} alt="Myfxbook" className="h-5 md:h-7 w-auto brightness-0 invert" />
+                                    <ExternalLink className="w-4 h-4 md:w-5 md:h-5" />
                                 </span>
                             </a>
                         </div>

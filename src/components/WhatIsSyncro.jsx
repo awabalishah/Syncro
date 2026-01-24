@@ -7,18 +7,18 @@ export function WhatIsSyncro() {
     const features = [
         {
             icon: <TrendingUp className="w-6 h-6 text-blue-600" />,
-            title: "Automated Growth",
-            description: "Your trading account grows automatically. 5–12% monthly gains have been experienced based on 2 years of verified performance."
+            title: "Automation Access",
+            description: "Access third-party automated trading technology designed to operate without manual trade execution from the user"
         },
         {
             icon: <Users className="w-6 h-6 text-indigo-600" />,
-            title: "Referral Income",
-            description: "Earn referral income from everyone you introduce to the Syncro ecosystem. A powerful secondary income stream."
+            title: "Referral Thank-You Programme",
+            description: "Syncro offers discretionary referral rewards for people you introduce to the platform. Participation is optional."
         },
         {
             icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />,
-            title: "Verified Results",
-            description: "View our live results link where you can track the trading bot's daily, weekly & monthly performance"
+            title: "Performance Transparency",
+            description: "View independently tracked strategy performance data via myfxbook, a third-party verification platform."
         }
     ];
 
