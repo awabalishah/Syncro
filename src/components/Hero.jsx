@@ -42,16 +42,16 @@ export function Hero() {
                         <TrustpilotWidget />
 
                         <h1 className="text-5xl lg:text-7xl font-bold font-manrope mb-6 text-white leading-[1.1]">
-                            Make Your Money <br />
-                            <span className="text-blue-500">Work For You.</span>
+                            A Smarter Way to <br />
+                            <span className="text-blue-500">Access Trading Automation</span>
                         </h1>
 
                         <p className="text-xl text-slate-300 mb-4 leading-relaxed max-w-xl">
-                            The world’s most successful investors use systems and automation to manage their wealth. Now you can too.
+                            Connect once. Stay in control. Let automation do the heavy lifting.
                         </p>
 
-                        <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-xl">
-                            Syncro is your gateway to automated wealth-building opportunities.
+                        <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-xl italic">
+                            "You always stay in control of your account and capital"
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -70,11 +70,11 @@ export function Hero() {
                         <div className="flex items-center gap-6 mt-4">
                             <div className="flex items-center gap-2">
                                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                <span className="text-sm font-medium text-slate-400">Verified Results</span>
+                                <span className="text-sm font-medium text-slate-400">Transparent Performance Tracking</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <div className="w-2 h-2 rounded-full bg-blue-500" />
-                                <span className="text-sm font-medium text-slate-400">Dedicated Support</span>
+                                <span className="text-sm font-medium text-slate-400">Ongoing Client Support</span>
                             </div>
                         </div>
                     </motion.div>

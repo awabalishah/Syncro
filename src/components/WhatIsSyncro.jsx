@@ -28,8 +28,7 @@ export function WhatIsSyncro() {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">What is Syncro?</h2>
                     <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-                        Syncro is a service provider that connects you to a fully automated trading bot.
-                        You can unlock two powerful earning streams in the Syncro ecosystem
+                        Syncro helps you connect your trading account to independent automated trading technology - with guided set up and ongoing support.
                     </p>
                 </div>
 
