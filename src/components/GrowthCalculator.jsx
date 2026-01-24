@@ -48,10 +48,10 @@ export function GrowthCalculator() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-blue-50 border border-blue-100/50 text-blue-700 text-sm font-bold mb-8 shadow-sm"
+                        className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-slate-900 border border-slate-800 text-blue-400 text-sm font-bold mb-8 shadow-lg"
                     >
-                        <img src={myfxbookLogo} alt="Myfxbook" className="h-4 w-auto opacity-80" />
-                        <span className="w-px h-3 bg-blue-200" />
+                        <img src={myfxbookLogo} alt="Myfxbook" className="h-4 w-auto" />
+                        <span className="w-px h-3 bg-slate-700" />
                         <span>Live Data Feed</span>
                     </motion.div>
 
@@ -60,7 +60,7 @@ export function GrowthCalculator() {
                     </h2>
 
                     <p className="text-lg text-slate-600 leading-relaxed">
-                        This page displays historical and ongoing performance data from an independently tracked automated trading strategy, sourced directly from Myfxbook. Explore the results below.
+                        View account activity anytime through your MT5 app or our live, independently tracked data feed. Updates are automatic and transparent.
                     </p>
                 </div>
 
@@ -144,7 +144,7 @@ export function GrowthCalculator() {
                                 className="w-full py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-[1.5rem] font-black text-lg transition-all flex items-center justify-center gap-3 group shadow-[0_20px_40px_-10px_rgba(37,99,235,0.4)] relative overflow-hidden border-beam"
                             >
                                 <span className="relative z-10 flex items-center gap-3">
-                                    View Live Stats on <img src={myfxbookLogo} alt="Myfxbook" className="h-6 w-auto brightness-0 invert" />
+                                    View Live Stats on <img src={myfxbookLogo} alt="Myfxbook" className="h-7 w-auto brightness-0 invert" />
                                     <ExternalLink className="w-5 h-5" />
                                 </span>
                             </a>

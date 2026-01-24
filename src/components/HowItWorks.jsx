@@ -33,7 +33,7 @@ export function HowItWorks() {
         {
             num: "03",
             title: "Connect Through Syncro",
-            desc: "Follow a straightforward connection process to link your account to the bot. Full instructions and support are available in our Discord.",
+            desc: "Follow a straightforward connection process to link your account to the automated strategy. Full instructions and support are available in our discord community",
             icon: <Bot className="w-8 h-8 text-purple-600" />,
             span: "md:col-span-1",
             color: "bg-purple-50"
@@ -41,7 +41,7 @@ export function HowItWorks() {
         {
             num: "04",
             title: "Automated Trading",
-            desc: "Once connected, trades execute automatically based on predefined rules and built-in risk controls. No manual management required.",
+            desc: "Once connected, trades execute automatically based on predefined rules and built-in risk controls. No manual trade execution is required.",
             icon: <Activity className="w-8 h-8 text-emerald-600" />,
             span: "md:col-span-1",
             color: "bg-emerald-50"
@@ -63,7 +63,7 @@ export function HowItWorks() {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">How Syncro <span className="text-blue-600">Works</span></h2>
                     <p className="text-slate-600 max-w-2xl mx-auto text-lg font-medium">
-                        A seamless, automated journey to smarter wealth management.
+                        A simple, automated journey to accessing trading automation.
                     </p>
                 </div>
 
@@ -112,7 +112,7 @@ export function HowItWorks() {
                                     rel="noopener noreferrer"
                                     className="mt-auto inline-flex items-center gap-2 text-blue-600 font-bold hover:underline relative z-10 transition-all group-hover:translate-x-1"
                                 >
-                                    View Live Performance on <img src={myfxbookLogo} alt="Myfxbook" className="h-4 w-auto grayscale group-hover:grayscale-0 transition-all" />
+                                    View Live Performance on <img src={myfxbookLogo} alt="Myfxbook" className="h-4 w-auto brightness-0 opacity-70 group-hover:opacity-100 transition-all" />
                                     <ExternalLink className="w-4 h-4" />
                                 </a>
                             )}

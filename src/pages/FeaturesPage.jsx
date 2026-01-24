@@ -59,7 +59,7 @@ export function FeaturesPage() {
                 <p>All trade activity is visible directly within your own MT5 account.</p>
                 <p>Independently tracked data is available via a live Myfxbook link that updates automatically.</p>
                 <a href="https://www.myfxbook.com/members/Syncro_/syncro-bot/11880753" target="_blank" rel="noopener noreferrer" className="self-start mt-2">
-                    <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto grayscale opacity-70 hover:opacity-100 transition-opacity" />
+                    <img src={myfxbookLogo} alt="Myfxbook" className="h-5 w-auto brightness-0 opacity-60 hover:opacity-100 transition-opacity" />
                 </a>
             </div>
         },

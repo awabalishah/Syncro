@@ -41,9 +41,8 @@ export function Hero() {
                     >
                         <TrustpilotWidget />
 
-                        <h1 className="text-5xl lg:text-7xl font-bold font-manrope mb-6 text-white leading-[1.1]">
-                            A Smarter Way to <br />
-                            <span className="text-blue-500">Access Trading Automation</span>
+                        <h1 className="text-4xl lg:text-7xl font-bold font-manrope mb-6 text-white leading-[1.1]">
+                            A Smarter Way to <span className="text-blue-500">Access Trading Automation</span>
                         </h1>
 
                         <p className="text-xl text-slate-300 mb-4 leading-relaxed max-w-xl">
