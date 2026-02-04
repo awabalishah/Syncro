@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, HelpCircle, MessageCircle, Shield, BarChart, Zap, Clock, AlertTriangle, Users } from 'lucide-react';
+import { ChevronDown, HelpCircle, MessageCircle, Shield, BarChart, Zap, Clock, AlertTriangle, Users, TrendingUp } from 'lucide-react';
 import { SectionCTA } from './SectionCTA';
 import myfxbookLogo from '../assets/myfxbook-logo.png';
 
