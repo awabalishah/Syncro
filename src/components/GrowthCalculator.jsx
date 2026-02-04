@@ -24,12 +24,10 @@ export function GrowthCalculator() {
     const [growthSlider, setGrowthSlider] = useState(6.5);
 
     const { feeTier, retainedGrowth } = useMemo(() => {
-        // Logic: 0-5%: 20%, 5-10%: 25%, 10%+: 30%
-        let tier = 25;
-        if (growthSlider < 5) tier = 20;
-        else if (growthSlider >= 10) tier = 30;
-
+        // Updated to flat 25% fee model
+        const tier = 25;
         const retained = growthSlider * (1 - tier / 100);
+
         return {
             feeTier: tier,
             retainedGrowth: retained.toFixed(1)
@@ -162,48 +160,82 @@ export function GrowthCalculator() {
                         className="lg:col-span-7 space-y-8"
                     >
                         {/* Illustrative Growth Scenario Card */}
-                        <div className="bg-[#fcfcfc] rounded-[2rem] md:rounded-[2.5rem] border-2 border-slate-200/60 shadow-[0_32px_64px_-16px_rgba(37,99,235,0.08)] p-6 md:p-10">
+                        <div className="glass-card rounded-[2.5rem] border-2 border-slate-200/10 shadow-[0_32px_64px_-16px_rgba(37,99,235,0.08)] p-6 md:p-10">
                             <div className="mb-12">
                                 <h3 className="text-3xl font-bold text-slate-900 mb-4">Illustrative Growth Scenario</h3>
                                 <p className="text-slate-500 text-lg leading-relaxed">
-                                    This illustration demonstrates how growth levels interact with Syncro’s service fee structure. Figures shown are hypothetical.
+                                    This illustration demonstrates how growth levels interact with Syncro’s flat 25% service fee. Figures shown are hypothetical.
                                 </p>
                             </div>
 
-                            <div className="relative mb-20 pt-10">
-                                <input
-                                    type="range"
-                                    min="0"
-                                    max="12"
-                                    step="0.5"
-                                    value={growthSlider}
-                                    onChange={(e) => setGrowthSlider(parseFloat(e.target.value))}
-                                    className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
-                                />
-                                <div className="flex justify-between mt-8 text-sm text-slate-400 font-black uppercase tracking-widest px-1">
-                                    <span>0%</span>
-                                    <span>4%</span>
-                                    <span className="text-blue-600">6%</span>
-                                    <span>8%</span>
-                                    <span>10+</span>
+                            <div className="max-w-4xl mx-auto mb-16 px-2">
+                                <div className="relative mb-6">
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="12"
+                                        step="0.1"
+                                        value={growthSlider}
+                                        onChange={(e) => setGrowthSlider(parseFloat(e.target.value))}
+                                        className="custom-slider"
+                                    />
+                                </div>
+                                <div className="flex justify-between px-1">
+                                    {[0, 4, 6, 8, '10+'].map((label, i) => (
+                                        <span
+                                            key={i}
+                                            className={`text-sm font-black transition-colors ${(typeof label === 'number' && Math.abs(growthSlider - label) < 1) || (label === '10+' && growthSlider >= 10)
+                                                ? 'text-blue-600' : 'text-slate-400'
+                                                }`}
+                                        >
+                                            {typeof label === 'number' ? `${label}%` : label}
+                                        </span>
+                                    ))}
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div className="p-8 rounded-[2rem] bg-slate-50 border-2 border-slate-100 shadow-sm relative overflow-hidden group">
                                     <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-4">Illustrative Account Growth</p>
-                                    <p className="text-4xl font-black text-slate-900 mb-3">+{growthSlider}%</p>
-                                    <p className="text-slate-400 text-xs font-bold">Hypothetical scenario</p>
+                                    <AnimatePresence mode="wait">
+                                        <motion.p
+                                            key={growthSlider}
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className="text-4xl font-black text-slate-900 mb-3"
+                                        >
+                                            +{growthSlider}%
+                                        </motion.p>
+                                    </AnimatePresence>
+                                    <p className="text-slate-400 text-xs font-bold italic">Hypothetical scenario</p>
                                 </div>
                                 <div className="p-8 rounded-[2rem] bg-slate-50 border-2 border-slate-100 shadow-sm relative overflow-hidden group">
                                     <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-4">Applicable Service Fee Tier</p>
-                                    <p className="text-4xl font-black text-slate-900 mb-3">{feeTier}%</p>
-                                    <p className="text-slate-400 text-xs font-bold">Based on selected growth range</p>
+                                    <AnimatePresence mode="wait">
+                                        <motion.p
+                                            key={feeTier}
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className="text-4xl font-black text-slate-900 mb-3"
+                                        >
+                                            {feeTier}%
+                                        </motion.p>
+                                    </AnimatePresence>
+                                    <p className="text-slate-400 text-xs font-bold italic">Standard flat service fee</p>
                                 </div>
                                 <div className="p-8 rounded-[2rem] bg-emerald-50/30 border-2 border-emerald-100 shadow-sm relative overflow-hidden group">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-600/5 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-emerald-600/10 transition-colors" />
                                     <p className="text-slate-600 text-[10px] font-black uppercase tracking-widest mb-4">Growth Retained After Service Fee</p>
-                                    <p className="text-4xl font-black text-slate-900 mb-3">~{retainedGrowth}%</p>
+                                    <AnimatePresence mode="wait">
+                                        <motion.p
+                                            key={retainedGrowth}
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className="text-4xl font-black text-slate-900 mb-3"
+                                        >
+                                            ~{retainedGrowth}%
+                                        </motion.p>
+                                    </AnimatePresence>
                                     <div className="w-12 h-1 bg-emerald-400/30 rounded-full mt-2" />
                                 </div>
                             </div>

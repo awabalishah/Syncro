@@ -17,7 +17,7 @@ export function HowItWorks() {
         {
             num: "01",
             title: "Set Up Your Broker Account",
-            desc: "You open and fund your own broker account using our simple setup guides, available through a dedicated link inside the Syncro Discord community. Your money stays fully under your control at all times, and you can withdraw whenever you want.",
+            desc: "Syncro now works exclusively with STARTRADER to ensure stable technical connections and automated daily fee settlement. You open and fund your account using our exclusive setup guides. Your money stays fully under your control.",
             icon: <Wallet className="w-8 h-8 text-blue-600" />,
             span: "md:col-span-2",
             color: "bg-blue-50"

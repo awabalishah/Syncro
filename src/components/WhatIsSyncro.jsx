@@ -11,14 +11,14 @@ export function WhatIsSyncro() {
             description: "Access third-party automated trading technology designed to operate without manual trade execution from the user"
         },
         {
-            icon: <Users className="w-6 h-6 text-indigo-600" />,
-            title: "Referral Thank-You Programme",
-            description: "Syncro offers discretionary referral rewards for people you introduce to the platform. Participation is optional."
-        },
-        {
             icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />,
             title: "Performance Transparency",
             description: "View independently tracked strategy performance data via myfxbook, a third-party verification platform."
+        },
+        {
+            icon: <Users className="w-6 h-6 text-indigo-600" />,
+            title: "Referral Thank-You Programme",
+            description: "Syncro offers discretionary referral rewards for people you introduce to the platform. Participation is optional."
         }
     ];
 
@@ -49,7 +49,7 @@ export function WhatIsSyncro() {
                             style={{ transformStyle: 'preserve-3d' }}
                         >
                             <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-8 shadow-inner border border-white/10 group-hover:bg-blue-600/20 group-hover:border-blue-500/30 transition-all duration-300" style={{ transform: 'translateZ(20px)' }}>
-                                {React.cloneElement(feature.icon, { className: `w-8 h-8 ${index === 0 ? 'text-blue-400' : index === 1 ? 'text-indigo-400' : 'text-emerald-400'}` })}
+                                {React.cloneElement(feature.icon, { className: `w-8 h-8 ${index === 0 ? 'text-blue-400' : index === 1 ? 'text-emerald-400' : 'text-indigo-400'}` })}
                             </div>
                             <h3 className="text-2xl font-bold mb-4 text-white" style={{ transform: 'translateZ(10px)' }}>{feature.title}</h3>
                             <p className="text-slate-400 leading-relaxed text-sm" style={{ transform: 'translateZ(5px)' }}>
