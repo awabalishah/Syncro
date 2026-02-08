@@ -68,7 +68,8 @@ export function SuccessStories() {
                                         </div>
                                     ))}
                                 </div>
-                                <img src="https://cdn.trustpilot.net/brand-assets/1.1.0/logo-black.svg" alt="Trustpilot" className="h-5 opacity-50" />
+                                {/* Trustpilot logo - commented out until we have legitimate reviews */}
+                                {/* <img src="https://cdn.trustpilot.net/brand-assets/1.1.0/logo-black.svg" alt="Trustpilot" className="h-5 opacity-50" /> */}
                             </div>
 
                             <h4 className="font-bold text-slate-900 mb-2">{item.title || "Experience with Syncro"}</h4> {/* Added title placeholder if not in data, or just use generic */}

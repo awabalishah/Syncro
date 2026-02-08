@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
 import { BackgroundIcons } from './BackgroundIcons';
 
-function TrustpilotWidget() {
+// Trustpilot widget - commented out until we have legitimate reviews
+/* function TrustpilotWidget() {
     return (
         <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 md:px-4 py-2 rounded-full border border-white/10 w-fit mb-8">
             <div className="flex gap-0.5 shrink-0">
@@ -19,7 +20,7 @@ function TrustpilotWidget() {
             </div>
         </div>
     );
-}
+} */
 
 export function Hero() {
     return (
@@ -39,7 +40,7 @@ export function Hero() {
                         transition={{ duration: 0.8 }}
                         className="flex flex-col items-start text-left py-20"
                     >
-                        <TrustpilotWidget />
+                        {/* <TrustpilotWidget /> */}
 
                         <h1 className="text-4xl lg:text-7xl font-bold font-manrope mb-6 text-white leading-[1.1]">
                             A Smarter Way to <span className="text-blue-500">Access Trading Automation</span>
@@ -58,12 +59,14 @@ export function Hero() {
                                 Learn More
                                 <ArrowRight className="w-5 h-5" />
                             </a>
-                            <button
-                                disabled
-                                className="bg-white/5 backdrop-blur-sm border border-white/10 text-slate-400 cursor-not-allowed px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center"
+                            <a
+                                href="https://discord.gg/dQMDjWSD"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center"
                             >
-                                Discord Coming Soon
-                            </button>
+                                Join Discord
+                            </a>
                         </div>
 
                         <div className="flex items-center gap-6 mt-4">

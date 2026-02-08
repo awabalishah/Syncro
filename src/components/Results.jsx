@@ -62,7 +62,7 @@ export function Results() {
             </div>
 
             <div className="container mx-auto px-6">
-                <SectionCTA nextSectionId="testimonials" label="Success Stories" />
+                <SectionCTA nextSectionId="faq" label="Common Questions" />
             </div>
         </section>
     );

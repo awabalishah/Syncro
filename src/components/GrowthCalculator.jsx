@@ -173,7 +173,7 @@ export function GrowthCalculator() {
                                     <input
                                         type="range"
                                         min="0"
-                                        max="12"
+                                        max="15"
                                         step="0.1"
                                         value={growthSlider}
                                         onChange={(e) => setGrowthSlider(parseFloat(e.target.value))}
@@ -181,10 +181,10 @@ export function GrowthCalculator() {
                                     />
                                 </div>
                                 <div className="flex justify-between px-1">
-                                    {[0, 4, 6, 8, '10+'].map((label, i) => (
+                                    {[0, 5, 10, '15+'].map((label, i) => (
                                         <span
                                             key={i}
-                                            className={`text-sm font-black transition-colors ${(typeof label === 'number' && Math.abs(growthSlider - label) < 1) || (label === '10+' && growthSlider >= 10)
+                                            className={`text-sm font-black transition-colors ${(typeof label === 'number' && Math.abs(growthSlider - label) < 1) || (label === '15+' && growthSlider >= 15)
                                                 ? 'text-blue-600' : 'text-slate-400'
                                                 }`}
                                         >

@@ -7,7 +7,8 @@ import { Results } from '../components/Results';
 import { ProfitShare } from '../components/ProfitShare';
 import { Referral } from '../components/Referral';
 import { GrowthCalculator } from '../components/GrowthCalculator';
-import { SuccessStories } from '../components/SuccessStories';
+// Trustpilot testimonials - commented out until we have legitimate reviews
+// import { SuccessStories } from '../components/SuccessStories';
 import { FAQ } from '../components/FAQ';
 import { Features } from '../components/Features';
 
@@ -21,7 +22,7 @@ export function Home() {
             <Technology />
             <Features />
             <Results />
-            <SuccessStories />
+            {/* <SuccessStories /> */}
             <FAQ />
             <ProfitShare />
             <Referral />
