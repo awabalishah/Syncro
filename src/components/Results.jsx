@@ -39,24 +39,32 @@ export function Results() {
             </div>
 
             {/* Infinite Marquee Slider */}
-            <div className="relative w-full overflow-hidden py-10 mb-20">
-                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10" />
-                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10" />
+            <div className="relative w-full overflow-hidden py-10 mb-20 group">
+                {/* Gradient Shadows - Reduced on mobile, larger on desktop */}
+                <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
 
                 <motion.div
-                    className="flex gap-8 px-8 cursor-grab active:cursor-grabbing"
-                    drag="x"
-                    dragConstraints={{ left: -2000, right: 2000 }} // Larger constraints to allow free movement
-                    animate={{ x: ["0%", "-33.33%"] }}
+                    className="flex gap-8 px-4 md:px-8"
+                    animate={{ x: ["0%", "-50%"] }} // Move by 2 sets out of 4 for seamless loop
                     transition={{
-                        duration: 15,
+                        duration: 120, // Reduced speed for smoother viewing
                         ease: "linear",
                         repeat: Infinity
                     }}
-                    whileHover={{ scale: 1.01 }}
+                    style={{ width: "fit-content" }}
                 >
-                    {infiniteScroll.map((src, index) => (
-                        <MobileMockup key={index} src={src} className="w-[280px] md:w-[320px]" />
+                    {/* Render screenshots multiple times for seamless loop */}
+                    {[...Array(4)].map((_, i) => (
+                        <div key={i} className="flex gap-8 shrink-0">
+                            {SCREENSHOTS.map((src, index) => (
+                                <MobileMockup
+                                    key={`${i}-${index}`}
+                                    src={src}
+                                    className="w-[280px] md:w-[320px] shrink-0"
+                                />
+                            ))}
+                        </div>
                     ))}
                 </motion.div>
             </div>
